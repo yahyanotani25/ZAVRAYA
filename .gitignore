@@ -1,0 +1,13 @@
+# Un-watermarked final is delivered privately after payment - never push it (this repo is public)
+deliverables/*CLEAN*
+*_CLEAN*.mp4
+
+# Raw client footage stays out of the repo
+raw/
+*.mov
+*.MOV
+*.zip
+
+__pycache__/
+*.log
+*.log.mbtree
