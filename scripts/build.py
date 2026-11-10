@@ -4,6 +4,8 @@ then encode the delivery files.
 usage:
   python build.py RAW_CLIPS_DIR [OUT_DIR]           full build
   python build.py --deliver-only MASTER_CLEAN MASTER_WM [OUT_DIR]
+  python build.py --rewatermark MASTER_CLEAN [OUT_DIR]   only rebuild the previews
+                                                         with the current watermark
 
 Outputs (OUT_DIR, default ../deliverables):
   SouqUmmBesher_Reel_CLEAN_1080x1920.mp4        final for the client (after payment)
@@ -39,10 +41,11 @@ def two_pass(src, dst, work, tag, bitrate, maxrate, bufsize, vf=None, audio=('-c
     run(base + ['-pass', '2'] + list(audio) + [dst])
 
 
-def deliver(master_clean, master_wm, out, work):
+def deliver(master_clean, master_wm, out, work, clean=True):
     os.makedirs(out, exist_ok=True)
-    two_pass(master_clean, os.path.join(out, 'SouqUmmBesher_Reel_CLEAN_1080x1920.mp4'), work, 'c',
-             '14M', '20M', '28M')
+    if clean:
+        two_pass(master_clean, os.path.join(out, 'SouqUmmBesher_Reel_CLEAN_1080x1920.mp4'), work, 'c',
+                 '14M', '20M', '28M')
     two_pass(master_wm, os.path.join(out, 'SouqUmmBesher_Reel_PREVIEW_HMS.mp4'), work, 'w',
              '8M', '12M', '16M')
     two_pass(master_wm, os.path.join(out, 'SouqUmmBesher_Reel_PREVIEW_HMS_WhatsApp.mp4'), work, 'wa',
@@ -52,6 +55,19 @@ def deliver(master_clean, master_wm, out, work):
 def main():
     work = os.environ.get('REEL_WORK') or tempfile.mkdtemp(prefix='reel_')
     os.makedirs(work, exist_ok=True)
+    if sys.argv[1] == '--rewatermark':
+        # watermark is the last layer of the frame, so overlaying it on the clean
+        # master gives the same picture as a full re-render
+        master_clean = sys.argv[2]
+        out = os.path.abspath(sys.argv[3] if len(sys.argv) > 3 else os.path.join(ROOT, 'deliverables'))
+        png = os.path.join(work, 'watermark.png')
+        run([sys.executable, os.path.join(HERE, 'render.py'), '--watermark-png', png], cwd=HERE)
+        master_wm = os.path.join(work, 'master_wm.mp4')
+        run(['ffmpeg', '-v', 'error', '-y', '-i', master_clean, '-i', png, '-filter_complex',
+             '[0:v][1:v]overlay=0:0:format=auto,format=yuv420p', '-c:v', 'libx264', '-preset', 'medium',
+             '-crf', '12'] + COLOR + ['-c:a', 'copy', master_wm])
+        deliver(master_clean, master_wm, out, work, clean=False)
+        return
     if sys.argv[1] == '--deliver-only':
         out = os.path.abspath(sys.argv[4] if len(sys.argv) > 4 else os.path.join(ROOT, 'deliverables'))
         deliver(sys.argv[2], sys.argv[3], out, work)

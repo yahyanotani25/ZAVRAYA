@@ -999,46 +999,44 @@ class EndCard:
 
 
 # -------------------------------------------------------------- watermark ---
+WM_WIDTH = 210      # medium-size logo
+WM_RIGHT = 46       # margin from the right edge
+WM_TOP = 130        # below the Instagram top bar
+WM_OPACITY = 0.92
+
+
 def make_watermark():
+    """HMS Digital logo, top-right corner, with a soft dark glow so the white
+    lettering stays readable on bright skies, walls and ceilings."""
     ov = np.zeros((H, W, 4), np.float32)
-    # diagonal tiled text
-    txt = 'HMS DIGITAL  •  PREVIEW'
-    fnt = font(POP_SB, 38)
-    tile = Image.new('L', (int(fnt.getlength(txt)) + 40, 70), 0)
-    ImageDraw.Draw(tile).text((20, 52), txt, font=fnt, fill=255, anchor='ls')
-    big = Image.new('L', (W * 2, H * 2), 0)
-    tw, th = tile.size
-    for row, y in enumerate(range(0, H * 2, 250)):
-        off = (row % 2) * (tw // 2 + 60)
-        for x in range(-tw, W * 2, tw + 120):
-            big.paste(tile, (x + off, y))
-    big = big.rotate(28, resample=Image.BICUBIC)
-    big = big.crop((W // 2, H // 2, W // 2 + W, H // 2 + H))
-    tm = np.asarray(big, np.float32) / 255
-    sh = np.roll(cv2.GaussianBlur(tm, (0, 0), 2), 2, axis=0)
-    a_text = tm * 0.17
-    a_sh = sh * 0.10
-    A = a_text + a_sh * (1 - a_text)
-    ov[..., :3] = a_text[..., None] * 1.0
-    ov[..., 3] = A
-    # centre logo
     logo = cv2.imread(os.path.join(BRAND, 'hms_logo_white.png'), cv2.IMREAD_UNCHANGED)
     logo = cv2.cvtColor(logo, cv2.COLOR_BGRA2RGBA).astype(np.float32) / 255
-    lw = 440
-    lh = int(logo.shape[0] * lw / logo.shape[1])
+    lw = WM_WIDTH
+    lh = int(round(logo.shape[0] * lw / logo.shape[1]))
     logo = cv2.resize(logo, (lw, lh), interpolation=cv2.INTER_AREA)
-    la = logo[..., 3] * 0.40
-    shadow = cv2.GaussianBlur(logo[..., 3], (0, 0), 6) * 0.18
-    x0, y0 = (W - lw) // 2, (H - lh) // 2 - 40
-    sub = ov[y0:y0 + lh, x0:x0 + lw]
-    # shadow under logo, then logo over everything
-    A0 = sub[..., 3]
-    sub[..., :3] *= (1 - shadow)[..., None]
-    A1 = shadow + A0 * (1 - shadow)
-    sub[..., :3] = sub[..., :3] * (1 - la)[..., None] + logo[..., :3] * la[..., None]
-    sub[..., 3] = la + A1 * (1 - la)
-    ov[y0:y0 + lh, x0:x0 + lw] = sub
+    pad = 24
+    a = np.zeros((lh + 2 * pad, lw + 2 * pad), np.float32)
+    rgb = np.zeros((lh + 2 * pad, lw + 2 * pad, 3), np.float32)
+    a[pad:pad + lh, pad:pad + lw] = logo[..., 3]
+    rgb[pad:pad + lh, pad:pad + lw] = logo[..., :3]
+    glow = np.clip(cv2.GaussianBlur(a, (0, 0), 7) * 0.55 + np.roll(cv2.GaussianBlur(a, (0, 0), 2.0), 2, axis=0) * 0.35, 0, 1)
+    la = a * WM_OPACITY
+    A = la + glow * (1 - la)                 # logo over its dark glow
+    prem = rgb * la[..., None]               # glow is black -> adds no colour
+    x0 = W - WM_RIGHT - lw - pad
+    y0 = WM_TOP - pad
+    ov[y0:y0 + a.shape[0], x0:x0 + a.shape[1], :3] = prem
+    ov[y0:y0 + a.shape[0], x0:x0 + a.shape[1], 3] = A
     return ov
+
+
+def export_watermark_png(path):
+    """Straight-alpha PNG of the watermark layer (for ffmpeg overlay)."""
+    ov = make_watermark()
+    A = ov[..., 3:4]
+    rgb = np.where(A > 1e-4, ov[..., :3] / np.maximum(A, 1e-4), 0)
+    out = np.dstack([rgb, A]).clip(0, 1)
+    Image.fromarray((out * 255 + 0.5).astype(np.uint8), 'RGBA').save(path)
 
 
 # ------------------------------------------------------------------ main ----
@@ -1063,6 +1061,9 @@ def encoder(path):
 
 
 def main():
+    if sys.argv[1] == '--watermark-png':
+        export_watermark_png(sys.argv[2])
+        return
     raw, prefix, f0, f1 = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
     stills = os.environ.get('STILLS')  # comma list of frames -> write PNGs only (QA)
     shots = [Shot(s, raw) for s in T.SHOTS]

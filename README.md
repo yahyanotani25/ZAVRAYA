@@ -8,7 +8,7 @@ fast beat-synced cuts, speed ramps, zoom/whip transitions and an animated end ca
 
 | File | Use |
 |---|---|
-| `deliverables/SouqUmmBesher_Reel_PREVIEW_HMS.mp4` | Client preview, HMS Digital watermark (8 Mbps) |
+| `deliverables/SouqUmmBesher_Reel_PREVIEW_HMS.mp4` | Client preview, HMS Digital logo watermark in the top-right corner (8 Mbps) |
 | `deliverables/SouqUmmBesher_Reel_PREVIEW_HMS_WhatsApp.mp4` | Same preview, 720p / 13 MB for WhatsApp |
 | `SouqUmmBesher_Reel_CLEAN_1080x1920.mp4` | **Not in this repo.** Un-watermarked final, delivered privately after payment (this repo is public) |
 
@@ -31,7 +31,10 @@ Requires Python 3 with `numpy scipy opencv-python-headless pillow` (Pillow with 
 ```bash
 python scripts/make_logo.py assets/brand/hms_logo_source.jpg assets/brand   # keyed watermark PNGs
 python scripts/build.py /path/to/raw_clips deliverables                     # ~7 min on 4 cores
+python scripts/build.py --rewatermark master_clean.mp4 deliverables         # previews only, after a watermark change
 ```
+
+Watermark size/position/opacity: `WM_WIDTH`, `WM_RIGHT`, `WM_TOP`, `WM_OPACITY` in `scripts/render.py`.
 
 `scripts/timeline.py` holds the whole edit decision list (shots, in-points, speeds, transitions,
 caption text, contact details) — change text or timing there and re-run `build.py`.
