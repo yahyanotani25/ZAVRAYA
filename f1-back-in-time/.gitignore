@@ -1,0 +1,7 @@
+# renders and the client's source material stay out of the repo
+out/
+raw/
+*.mp4
+*.wav
+!assets/sfx/*.wav
+__pycache__/
