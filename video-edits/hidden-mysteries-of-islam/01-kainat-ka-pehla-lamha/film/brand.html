@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/fonts.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#000;overflow:hidden}
+#root{position:absolute;left:0;top:0;overflow:hidden;background:#03050c;color:#fff}
+canvas{position:absolute;left:0;top:0}
+.abs{position:absolute}
+.gold{background:linear-gradient(180deg,#FFF6D2 0%,#F4CF72 34%,#C58B2A 68%,#F7D98A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+</style></head><body><div id="root"></div>
+<script type="module">
+import { Q } from '/src/quran.js';
+const q = new URLSearchParams(location.search), v = q.get('v') || 'thumb', NAME = q.get('name') || 'UQOL';
+const root = document.getElementById('root');
+function rng(seed){let a=seed>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function stars(cv, W, H, o = {}) {
+  const x = cv.getContext('2d'), R = rng(o.seed || 7), cx = (o.cx ?? 0.5) * W, cy = (o.cy ?? 0.5) * H;
+  const g = x.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.75);
+  (o.stops || [[0, '#172a55'], [0.35, '#0a1430'], [1, '#02040a']]).forEach(([p, c]) => g.addColorStop(p, c)); x.fillStyle = g; x.fillRect(0, 0, W, H);
+  x.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < (o.n || 2600); i++) {
+    const a = R() * 6.283, d = Math.pow(R(), 0.55) * Math.max(W, H) * 0.8, px = cx + Math.cos(a) * d, py = cy + Math.sin(a) * d;
+    const s = 0.5 + Math.pow(R(), 6) * 3.4, b = 0.25 + R() * 0.75, len = o.warp ? (6 + d * 0.085 * (0.4 + R())) : 0;
+    const col = [[255,255,255],[190,215,255],[255,226,170]][Math.floor(R() * 3)];
+    if (len > 0) { x.strokeStyle = `rgba(${col},${b * 0.55})`; x.lineWidth = s * 0.9; x.beginPath(); x.moveTo(px, py); x.lineTo(px + Math.cos(a) * len, py + Math.sin(a) * len); x.stroke(); }
+    x.fillStyle = `rgba(${col},${b})`; x.beginPath(); x.arc(px, py, s, 0, 6.283); x.fill();
+  }
+  x.globalCompositeOperation = 'source-over';
+}
+function rosette(size, n, color, op) {      // n-fold interlaced star, thin lines
+  let p = ''; const c = size / 2;
+  for (let k = 0; k < n; k++) { const a0 = k * (Math.PI / 2) / n; let d = '';
+    for (let j = 0; j <= 4; j++) { const a = a0 + j * 2 * Math.PI / 4, r = c * 0.92; d += (j ? 'L' : 'M') + (c + Math.cos(a) * r).toFixed(1) + ' ' + (c + Math.sin(a) * r).toFixed(1); }
+    p += `<path d="${d}Z" fill="none" stroke="${color}" stroke-width="${size / 420}" opacity="${op}"/>`; }
+  for (const r of [0.92, 0.66, 0.47]) p += `<circle cx="${c}" cy="${c}" r="${c * r}" fill="none" stroke="${color}" stroke-width="${size / 500}" opacity="${op * 0.9}"/>`;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${p}</svg>`;
+}
+function setSize(W, H) { root.style.width = W + 'px'; root.style.height = H + 'px'; const cv = document.createElement('canvas'); cv.width = W; cv.height = H; root.appendChild(cv); return cv; }
+const add = (html) => { const d = document.createElement('div'); d.innerHTML = html; while (d.firstChild) root.appendChild(d.firstChild); };
+
+if (v === 'thumb') {                       // 1920x1080 master (exported at 1280x720 too)
+  const W = 1920, H = 1080, cv = setSize(W, H);
+  stars(cv, W, H, { cx: 0.74, cy: 0.47, warp: true, n: 2400, seed: 11, stops: [[0, '#5a3a08'], [0.16, '#2a1c06'], [0.45, '#070b1a'], [1, '#010206']] });
+  add(`
+  <div class="abs" style="left:1035px;top:120px;width:880px;height:780px;background:radial-gradient(ellipse at 50% 50%, rgba(255,205,110,.55) 0%, rgba(255,190,90,.22) 32%, rgba(255,190,90,0) 66%)"></div>
+  <div class="abs" style="left:-40px;top:0;width:1010px;height:1080px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 62%,rgba(0,0,0,0) 100%)">
+    <img src="/gfx/img/einstein1947.jpg" style="position:absolute;left:-60px;top:-150px;width:1130px;filter:grayscale(1) contrast(1.28) brightness(.98)">
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 46%,rgba(0,0,0,.82) 100%)"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(255,40,40,.16),rgba(255,40,40,0) 60%);mix-blend-mode:screen"></div>
+  </div>
+  <svg class="abs" style="left:640px;top:36px" width="300" height="300" viewBox="0 0 330 330"><g stroke="#FF2B2B" stroke-width="46" stroke-linecap="round" style="filter:drop-shadow(0 0 22px rgba(255,40,40,.75))"><path d="M45 45L285 285"/><path d="M285 45L45 285"/></g></svg>
+  <div class="abs" style="left:1010px;top:150px;width:880px;text-align:center;font-family:'Amiri Quran','Amiri',serif;direction:rtl;font-size:250px;line-height:1.5;color:#FFF4D4;text-shadow:0 0 40px rgba(255,205,110,.95),0 0 110px rgba(255,180,70,.7),0 6px 18px rgba(0,0,0,.6)">${Q['w:lamusiun']}</div>
+  <div class="abs" style="left:1010px;top:548px;width:880px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:80px;letter-spacing:.06em;color:#FFD979;text-shadow:0 4px 18px rgba(0,0,0,.9)">QURAN KE 2 LAFZ</div>
+  <div class="abs" style="left:1010px;top:658px;width:880px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:52px;letter-spacing:.16em;color:#fff;opacity:.9;text-shadow:0 4px 18px rgba(0,0,0,.9)">1300 SAAL PEHLE</div>
+  <div class="abs" style="left:54px;top:640px;font-family:'Anton',sans-serif;font-size:232px;line-height:.98;letter-spacing:.01em;color:#fff;text-shadow:0 8px 0 rgba(0,0,0,.55),0 0 50px rgba(0,0,0,.95),0 0 12px rgba(0,0,0,1);-webkit-text-stroke:3px rgba(0,0,0,.55);paint-order:stroke fill">EINSTEIN<br><span style="color:#FF2F2F">GHALAT</span> THA</div>
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;box-shadow:inset 0 0 260px rgba(0,0,0,.75)"></div>`);
+}
+if (v === 'logo') {                        // 1600x1600 master (circle-safe)
+  const W = 1600, H = 1600, cv = setSize(W, H);
+  stars(cv, W, H, { cx: 0.5, cy: 0.5, n: 900, seed: 5, stops: [[0, '#16264f'], [0.5, '#0a1330'], [1, '#03050e']] });
+  add(`
+  <div class="abs" style="left:100px;top:100px;opacity:.9">${rosette(1400, 4, '#E9B955', 0.5)}</div>
+  <div class="abs" style="left:160px;top:160px;width:1280px;height:1280px;border-radius:50%;border:10px solid #E9B955;box-shadow:0 0 70px rgba(233,185,85,.45), inset 0 0 90px rgba(233,185,85,.18)"></div>
+  <div class="abs" style="left:205px;top:205px;width:1190px;height:1190px;border-radius:50%;border:3px solid rgba(233,185,85,.7)"></div>
+  <div class="abs" style="left:400px;top:400px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(4,7,18,.96) 0%,rgba(4,7,18,.9) 62%,rgba(4,7,18,0) 100%)"></div>
+  <div class="abs gold" style="left:0;top:560px;width:1600px;text-align:center;font-family:'Cinzel',serif;font-weight:900;font-size:286px;letter-spacing:.07em;padding-left:.07em;line-height:1">${NAME}</div>
+  <div class="abs" style="left:0;top:885px;width:1600px;text-align:center;font-family:'Amiri',serif;font-weight:700;direction:rtl;font-size:170px;line-height:1.2;color:#F8DE9A;text-shadow:0 0 30px rgba(233,185,85,.5)">عقول</div>
+  <div class="abs" style="left:520px;top:520px;width:560px;height:5px;background:linear-gradient(90deg,rgba(233,185,85,0),#E9B955,rgba(233,185,85,0))"></div>`);
+}
+if (v === 'banner') {                      // 2560x1440, safe area 1546x423 centred (507..2053 x 508..931)
+  const W = 2560, H = 1440, cv = setSize(W, H);
+  stars(cv, W, H, { cx: 0.5, cy: 0.5, n: 4200, seed: 23, stops: [[0, '#1a2c5c'], [0.3, '#0b1533'], [1, '#02040b']] });
+  add(`
+  <div class="abs" style="left:580px;top:20px;opacity:.5">${rosette(1400, 6, '#E9B955', 0.3)}</div>
+  <div class="abs" style="left:0;top:0;width:2560px;height:1440px;background:radial-gradient(ellipse at 50% 50%, rgba(3,6,16,.72) 0%, rgba(3,6,16,.35) 32%, rgba(3,6,16,0) 60%)"></div>
+  <div class="abs" style="left:507px;top:516px;width:1546px;display:flex;justify-content:center;align-items:center;gap:56px">
+    <div class="gold" style="font-family:'Cinzel',serif;font-weight:900;font-size:228px;letter-spacing:.16em;line-height:1">${NAME}</div>
+    <div style="width:4px;height:170px;margin-left:-20px;background:linear-gradient(180deg,rgba(233,185,85,0),#E9B955,rgba(233,185,85,0))"></div>
+    <div style="font-family:'Amiri',serif;font-weight:700;direction:rtl;font-size:190px;line-height:1;padding-bottom:36px;color:#F8DE9A;text-shadow:0 0 30px rgba(233,185,85,.5)">عقول</div>
+  </div>
+  <div class="abs" style="left:150px;top:719px;width:330px;height:3px;background:linear-gradient(90deg,rgba(233,185,85,0),rgba(233,185,85,.8))"></div>
+  <div class="abs" style="left:2080px;top:719px;width:330px;height:3px;background:linear-gradient(270deg,rgba(233,185,85,0),rgba(233,185,85,.8))"></div>
+  <div class="abs" style="left:478px;top:708px;width:24px;height:24px;transform:rotate(45deg);border:3px solid #E9B955"></div>
+  <div class="abs" style="left:2058px;top:708px;width:24px;height:24px;transform:rotate(45deg);border:3px solid #E9B955"></div>
+  <div class="abs" style="left:880px;top:776px;width:800px;height:3px;background:linear-gradient(90deg,rgba(233,185,85,0),#E9B955,rgba(233,185,85,0))"></div>
+  <div class="abs" style="left:507px;top:800px;width:1546px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:46px;letter-spacing:.34em;color:#fff">ISLAM · SCIENCE · FALSAFA · MANTIQ</div>
+  <div class="abs" style="left:507px;top:872px;width:1546px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:500;font-size:34px;letter-spacing:.12em;color:rgba(245,241,232,.8)">Quran ki nishaniyan — daleel ke saath</div>
+  <div class="abs" style="left:0;top:0;width:2560px;height:1440px;box-shadow:inset 0 0 420px rgba(0,0,0,.7)"></div>`);
+}
+await document.fonts.ready; window.ready = true;
+</script></body></html>

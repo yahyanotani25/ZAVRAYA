@@ -21,6 +21,9 @@ recording is private). This folder holds everything needed to rebuild the edit f
   presence +8 dB, air +11 dB), followed by de-esser, gentle two-stage compression, soft saturation, limiter, −16 LUFS.
   The enhanced track was transcribed again and re-checked against the script (same words, no repeats, no gaps).
   `edit/enhance.py` is the earlier DSP-only chain.
+- Final mix (v4): the channel owner ran the cut track through Adobe's speech enhancer and supplied the result. It is
+  the same length and sample-aligned with the cut, so it drops straight into the mix; only its level is normalised
+  (−16 LUFS). It was transcribed and checked against the script again: no repeated passage, no missing line.
 - The speaker's own wording is kept where it differs from the script (e.g. "Surah Adh-Dhariyat ki ayat number 47",
   "jis ka tarjuma hai", "13.8 billion years"). Lines 303–304 of the script ("Woh video screen par…") were not recorded,
   so the film ends on a 14 s end screen.
@@ -53,7 +56,11 @@ recording is private). This folder holds everything needed to rebuild the edit f
 - Master: −14 LUFS integrated, −1 dBTP.
 
 ## Before uploading
-- Paste `youtube-description-credits.txt` into the description (required by the CC BY licences).
+- `youtube-upload-details.md` has the whole upload package: title options and translations, the description (chapters,
+  sources, credits), tags, every Studio setting, the pinned comment and the channel name / handle notes.
+- `thumbnail_1280x720.jpg` is the thumbnail; the channel logo and banner are in `../channel-branding/`.
+- The credits block inside the description is required by the CC BY licences (`youtube-description-credits.txt` is the
+  same block on its own).
 - `subtitles_roman_urdu.srt` can be uploaded as a caption track (Roman Urdu, script wording, timed to the voice).
 - The end screen has an empty 16:9 frame (left) and a circle (right) for YouTube's end-screen video and subscribe
   elements; it is labelled for Video 2 ("Aag kapde ko nahi jalati").
@@ -67,6 +74,8 @@ recording is private). This folder holds everything needed to rebuild the edit f
 | `audio/` | `sfx.py` (synthesiser), `mix.py` (voice + music + effects → master), `sfx.json` (effect cue list exported from the film) |
 | `CREDITS.md`, `youtube-description-credits.txt`, `assets-manifest.json` | Sources and licences for every clip, photo and track |
 | `subtitles_roman_urdu.srt` | Caption file |
+| `youtube-upload-details.md`, `thumbnail_1280x720.jpg` | Upload package and thumbnail |
+| `film/brand.html`, `film/brand.js` | Source of the thumbnail, logo and banner (`node brand.js <NAME>`, same local server as the film) |
 
 ## Rebuild
 The scripts use one working directory (`S=` at the top of the shell scripts; Python scripts run from it) laid out as
