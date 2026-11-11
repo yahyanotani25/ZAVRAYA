@@ -6,8 +6,8 @@ below. **CC BY items need the credit line in the YouTube description** — the r
 
 ## Music (supplied by the channel owner)
 
-The mix uses the same five trailer tracks the channel owner supplied for Video 1 (not included in this repo). Their
-licences were **not** checked here: "no copyright" tracks normally still require the creator's credit line in the video
+The mix uses the five trailer tracks the channel owner supplied for Video 1 plus a sixth one supplied for this film
+("Danger"); none of them is included in this repo. Their licences were **not** checked here: "no copyright" tracks normally still require the creator's credit line in the video
 description, so copy it from each track's own page before uploading.
 
 | Track (as named in the supplied file) | Creator |
@@ -17,6 +17,7 @@ description, so copy it from each track's own page before uploading.
 | Cinematic Tension Trailer NoCopyright Background Music \| Shell Ghost | Soundridemusic |
 | Dramatic Cinematic Teaser Trailer Music \| Epic Background Music | uploader not named in the file |
 | Cinematic Suspense Trailer NoCopyright Music for Video \| Fear of The Dark | Soundridemusic |
+| Action Trailer Teaser No Copyright Background Music \| Danger | ArcticFoxMusic |
 
 Where each track plays, and which musical moment is lined up with which picture beat, is in `audio/mix.py` (`PLAN`).
 

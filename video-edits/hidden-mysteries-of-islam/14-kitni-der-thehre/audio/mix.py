@@ -40,9 +40,10 @@ env = signal.sosfiltfilt(signal.butter(2, 6, fs=SR, output='sos'), env).clip(0, 
 # ---------------- music ----------------
 # (track, start_time, end_time, offset_in_track, fade_in, fade_out, gain_dB trim)
 def at(k, d=0.0): return T(k) + d
-# Scored with the five trailer tracks supplied by the channel owner (music/user/*.mp3). The big musical moments are lined up with the picture.
+# Scored with the six trailer tracks supplied by the channel owner (music/user/*.mp3). The big musical moments are lined up with the picture.
 # (track, t0, t1, offset_in_track, fade_in, fade_out, trim_dB, bed_dB_offset)
 U1, U2, U3, U4, U5 = 'u1_epic_action_intro', 'u2_action_synths_arcticfox', 'u3_shell_ghost_soundride', 'u4_dramatic_teaser', 'u5_fear_of_the_dark_soundride'
+U6 = 'u6_danger_arcticfox'                     # sixth track, added by the channel owner for this film: "Danger" (ArcticFoxMusic)
 tTitle = E('37') + 0.44                       # title slam
 tR309 = T('194') - 0.12; tR168 = T('317') - 0.1
 def swell(t_hit, t_end, lead=2.0, trim=0.0, bed=0.0, fo=2.5): return (U4, t_hit - lead, t_end, 32.0 - lead, min(1.0, lead * 0.5), fo, trim, bed)   # u4's swell (32 s) lands on t_hit
@@ -57,7 +58,9 @@ PLAN = [
  (U5, PART['c'] - 0.8,     T('85') - 0.3,         60.0, 2.0, 0.8,   0.0, -1.0),   # Newton, Einstein
  (U2, T('85') - 2.2,       T('100') + 1.0,         0.0, 0.2, 2.5,  -0.5,  0.0),   # opening hit = "Saal 1971"; builds as Mr. Clock flies round the world
  (U3, T('100') - 0.8,      PART['d'] + 1.2,       16.0, 1.5, 2.5,   0.5, -0.5),   # head and feet, the Earth's core
- (U1, t0d,                 T('139') + 0.8,  36.0 - (T('123') - t0d), 2.0, 2.0, 0.0, -1.0),   # the muon: u1 goes into full drive on "zinda kaise pohancha?"
+ # the muon and GPS: "Danger". Its bass pulses run under "Apni hatheli kholiye"; its first full hit (10.96 s) lands on "muon.", the next hits fall on
+ # "15 kilometer", "do microsecond", after "...zinda kaise pohancha?", on "sirf ek-do" and on "Aapki hatheli par."; the full drive carries the GPS part
+ (U6, T('113') - 10.96 - 0.04, T('139') + 0.8,       0.0, 1.2, 2.2,   0.0, -1.0),
  (U3, T('139') - 0.6,      T('143') + 1.5,        36.0, 1.5, 2.0,   0.0, -1.5),   # the fair note
  swell(T('145') - 0.1, PART['e'] + 1.2, lead=6.0, trim=-1.0, bed=-1.0, fo=3.0),      # ayah 22:47
  (U5, PART['e'] - 0.6,     T('177') - 0.2,         0.0, 2.0, 0.4,   0.0, -0.5),   # the cave, the coin, the bazaar

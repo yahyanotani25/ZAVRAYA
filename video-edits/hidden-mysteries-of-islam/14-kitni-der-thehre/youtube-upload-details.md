@@ -68,6 +68,7 @@ MUSIC
 - Cinematic Tension Trailer "Shell Ghost" — Soundridemusic
 - Dramatic Cinematic Teaser Trailer Music
 - Cinematic Suspense Trailer "Fear of The Dark" — Soundridemusic
+- Action Trailer Teaser "Danger" — ArcticFoxMusic
 
 FOOTAGE & IMAGES
 Night-sky time-lapses over Paranal: ESO/B. Tafreshi (CC BY 4.0)
@@ -79,7 +80,7 @@ Sound effects, motion graphics and 3D animation: original.
 #Quran #Waqt #Einstein #IslamAurScience #Relativity
 ```
 
-**Music ke baare mein:** paanchon tracks aap ke diye hue hain; un ki licence main verify nahi kar saka. Har track ki credit line us ke
+**Music ke baare mein:** chhe ke chhe tracks aap ke diye hue hain (paanch purane + naya "Danger"); un ki licence main verify nahi kar saka. Har track ki credit line us ke
 YouTube page se "MUSIC" ke neeche paste karein. Upload ke baad Studio → Content → "Restrictions" dekh lein; claim aaye to bata dein —
 sirf us hisse ka music badal dunga, video dobara render nahi karni padegi.
 

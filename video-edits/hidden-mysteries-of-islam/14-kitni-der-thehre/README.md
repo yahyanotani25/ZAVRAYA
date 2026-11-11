@@ -60,12 +60,14 @@ typed by hand):
   2:259 is a miracle, not physics; "1 ghanta 41 minute" is arithmetic, not tafsir; the Lemlich curve is a model.
 
 **Sound**
-- Music: the five trailer tracks supplied by the channel owner, cut into 34 cues (`PLAN` in `audio/mix.py`). Their big
-  moments are lined up with the picture — the first build lands on "Woh jhoot nahi bol raha", the opening hit on
-  "Saal 2010" and "Saal 1971", the swell of the dramatic teaser on the title, on ayah 22:47, on 309.2, on "Wohi sawal.
-  Teesri baar.", on Surah Al-Asr and on "Aap KHUD waqt hain", the last hit on the timer reveal. The bed sits 7.5 dB
-  under the open level while the voice speaks, and the music cuts out completely (`DROPS`) before the biggest lines
-  and for the whole of the bet's silence.
+- Music: six trailer tracks supplied by the channel owner (the five from Video 1 plus "Danger" by ArcticFoxMusic, added
+  for this film), cut into 34 cues (`PLAN` in `audio/mix.py`). Their big moments are lined up with the picture — the
+  first build lands on "Woh jhoot nahi bol raha", the opening hit on "Saal 2010" and "Saal 1971"; "Danger" scores the
+  muon and GPS sequence (its first full hit falls on the word "muon", the next ones on "pandrah kilometer", "do
+  microsecond", right after "…zinda kaise pohancha?" and on "Aapki hatheli par"); the swell of the dramatic teaser on
+  the title, on ayah 22:47, on 309.2, on "Wohi sawal. Teesri baar.", on Surah Al-Asr and on "Aap KHUD waqt hain", the
+  last hit on the timer reveal. The bed sits 7.5 dB under the open level while the voice speaks, and the music cuts out
+  completely (`DROPS`) before the biggest lines and for the whole of the bet's silence.
 - 414 sound-design hits (trailer horns, booms, whooshes, risers, ticking clocks, heartbeats, chimes, calculator keys,
   paper…) synthesised in `audio/sfx.py` — no samples, nothing to licence.
 - Master: −14 LUFS integrated, −1 dBTP.
