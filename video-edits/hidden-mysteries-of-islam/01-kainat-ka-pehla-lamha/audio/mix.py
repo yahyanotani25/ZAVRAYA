@@ -24,7 +24,7 @@ h = int(0.02 * SR); nb = N // h
 rms = np.sqrt((voice[:nb * h].reshape(nb, h) ** 2).mean(1) + 1e-12); act = (20 * np.log10(rms) > -42).astype(np.float32)
 env = np.zeros(nb, dtype=np.float32); v = 0.0
 for i in range(nb):
-    tgt = act[i]; v += (tgt - v) * (0.35 if tgt > v else 0.022); env[i] = v      # ~60 ms attack, ~0.9 s release
+    tgt = act[i]; v += (tgt - v) * (0.35 if tgt > v else 0.045); env[i] = v      # ~60 ms attack, ~0.45 s release: the score breathes in every pause
 # look-ahead 120 ms so the music is already down when the word starts
 env = np.maximum(env, np.roll(env, -6)); env = np.repeat(env, h); env = np.pad(env, (0, N - len(env)))
 env = signal.sosfiltfilt(signal.butter(2, 6, fs=SR, output='sos'), env).clip(0, 1)
@@ -32,25 +32,38 @@ env = signal.sosfiltfilt(signal.butter(2, 6, fs=SR, output='sos'), env).clip(0, 
 # ---------------- music ----------------
 # (track, start_time, end_time, offset_in_track, fade_in, fade_out, gain_dB trim)
 def at(k, d=0.0): return T(k) + d
+# v2: thriller / trailer scoring — a different cue for every beat of the story.  (track, t0, t1, offset, fade_in, fade_out, trim_dB, bed_dB_offset)
 PLAN = [
- ('decoherence',                 0.0,              PART['b'] + 1.5,   8.0,  2.5, 3.0,  0.0),
- ('passage-of-time',             PART['b'] - 1.0,  PART['c'] + 2.0,   2.0,  2.5, 4.0,  0.0),
- ('adrift-among-infinite-stars', PART['c'] - 1.5,  PART['d'] + 2.0,   0.0,  3.0, 4.0, -1.0),
- ('celestial',                   PART['d'] - 1.5,  PART['e'] + 2.0,  92.0,  3.0, 4.0,  0.0),
- ('computations_alt',            PART['e'] - 1.5,  at('148') + 1.0,  10.0,  3.0, 3.0, -2.0),
- ('cirrus',                      at('148') - 2.0,  PART['g'] + 2.0,  20.0,  3.0, 4.0, -2.5),
- ('in-search-of-solitude',       PART['g'] - 1.5,  PART['h'] + 2.5,  22.0,  3.0, 4.0,  0.0),
- ('intervention_alt',            PART['h'] - 2.0,  at('243') + 3.0,   4.0,  3.5, 5.0, -1.0),
- ('shoulders-of-giants',         at('243') - 2.0,  PART['i'] + 2.0, 268.0,  4.0, 4.0,  0.0),
- ('titan',                       PART['i'] - 1.5,  PART['j'] + 2.0,   3.0,  3.0, 4.0, -1.0),
- ('at-the-end-of-all-things',    PART['j'] - 1.5,  at('299') + 1.5,   0.0,  3.0, 4.0, -1.0),
- ('decoherence',                 at('299') - 2.0,  DUR,             150.0,  3.0, 3.5,  0.0),
+ ('Impact_Lento',        0.0,               at('12') + 0.5,     6.0, 1.2, 1.0,  1.0, 2.0),     # teaser: ominous build under the Einstein story
+ ('Impact_Moderato',     at('12') - 0.25,   at('16') - 0.1,     0.0, 0.25, 0.25, 0.0, 2.5),    # teaser montage: driving percussion
+ ('Impact_Intermezzo',   E('17') + 0.15,    PART['b'] + 2.2,    0.0, 0.05, 2.4,  0.0, 0.0),    # title hit
+ ('nightfall',           PART['b'] - 0.6,   PART['c'] + 1.5,   12.0, 2.0, 3.5,  0.0, 0.0),     # history: dark, pulsing investigation
+ ('anabasis-i',          PART['c'] - 1.0,   PART['d'] + 1.0,   20.0, 2.5, 3.0,  1.0, 0.0),     # the ayah, the grammar: suspended strings
+ ('chronicle',           PART['d'] - 1.0,   at('117') + 1.0,   62.0, 2.0, 3.0,  1.0, 0.0),     # rewind to the first moment: slow orchestral rise
+ ('the-vision',          at('117') - 1.5,   PART['e'] + 1.5,   30.0, 2.5, 3.0,  2.0, 0.0),     # the early scholars, "awalam yara"
+ ('Interloper',          PART['e'] - 1.0,   at('148') + 0.6,    8.0, 2.0, 1.2, -1.0, 0.0),     # the mystery hiss: ticking suspense
+ ('celestial',           at('148') - 1.2,   PART['f'] + 1.5,  128.0, 1.2, 3.5,  0.0, 0.0),     # "woh shor kainat ka tha": the reveal
+ ('shadows-and-dust',    PART['f'] - 1.0,   PART['g'] + 1.5,   40.0, 2.5, 3.0,  0.0, 0.0),     # smoke and water
+ ('Anxiety',             PART['g'] - 1.0,   at('184') + 0.8,    4.0, 2.0, 2.0, -1.0, 0.0),     # the sceptic's question
+ ('Tabuk',               at('184') - 1.0,   at('192') + 0.5,    3.0, 2.0, 2.5, -1.5, 0.0),     # Madinah, after Badr
+ ('the-old-ones',        at('192') - 2.0,   PART['h'] + 1.0,   60.0, 2.5, 2.5,  1.0, 0.0),     # the ayaat, "dil ud jaye"
+ ('Impact_Andante',      PART['h'] - 0.8,   at('231') + 1.0,    5.0, 1.5, 3.0,  0.0, 0.0),     # four doors: steady tension
+ ('Lightless_Dawn',      at('231') - 1.5,   at('243') + 1.5,  150.0, 2.5, 3.0,  1.0, 0.0),     # the endless chain
+ ('shoulders-of-giants', at('243') - 2.0,   PART['i'] + 1.5,  268.0, 3.5, 3.5,  0.0, 0.0),     # the only door left: climax
+ ('Echoes_of_Time_v2',   PART['i'] - 1.0,   at('267') + 1.0,   60.0, 2.0, 3.0,  0.0, 0.0),     # science today
+ ('titan',               at('267') - 1.5,   PART['j'] + 1.5,   62.0, 3.0, 3.5,  0.0, 0.0),     # the mountain
+ ('aphelion',            PART['j'] - 1.0,   at('299') + 0.8,   70.0, 3.0, 2.0,  0.0, 0.0),     # the end, the recap, the promise
+ ('Impact_Prelude',      at('299') - 0.8,   E('302') + 0.25,  118.0, 1.0, 0.12, 0.0, 1.5),     # cliff-hanger for the next video
+ ('decoherence',         E('302') + 0.5,    DUR,              150.0, 1.5, 3.5,  0.0, 0.0),     # end screen
 ]
-BED_LUFS, OPEN_LUFS = -31.5, -21.0          # music loudness under speech / in the clear (voice sits at -16)
+BED_LUFS, OPEN_LUFS = -27.0, -19.5          # music loudness under speech / in the clear (voice sits at -16)
+# moments where the music cuts out completely for effect (start, length)
+DROPS = [(T('4') - 0.34, 0.32), (T('8') - 0.05, E('8') - T('8') + 0.25), (T('16') - 0.2, E('16') - T('16') + 0.3), (E('17') - 0.12, 0.25)]
 meter = pyln.Meter(SR)
 music = np.zeros((N, 2), dtype=np.float32)
 if '--nomusic' not in sys.argv:
-    for name, t0, t1, off, fi, fo, trim in PLAN:
+    bedmap = np.full(N, BED_LUFS - OPEN_LUFS, dtype=np.float32)      # per-sample bed depth (dB below the open level)
+    for name, t0, t1, off, fi, fo, trim, bedoff in PLAN:
         t0 = max(0.0, t0); t1 = min(DUR, t1)
         if t1 - t0 < 1: continue
         x, sr = sf.read(f'{S}/music/wav/{name}.wav', dtype='float32'); assert sr == SR
@@ -63,9 +76,13 @@ if '--nomusic' not in sys.argv:
         seg *= 10 ** ((OPEN_LUFS - loud + trim) / 20)
         e = np.ones(n, dtype=np.float32); nfi = int(fi * SR); nfo = int(fo * SR)
         e[:nfi] = np.sin(np.linspace(0, np.pi / 2, nfi)) ** 2; e[-nfo:] *= np.cos(np.linspace(0, np.pi / 2, nfo)) ** 2
-        i0 = int(t0 * SR); music[i0:i0 + n] += seg * e[:, None]
+        i0 = int(t0 * SR); music[i0:i0 + n] += seg * e[:, None]; bedmap[i0:i0 + n] = BED_LUFS - OPEN_LUFS + bedoff
         print(f'music {name:28s} {t0:7.1f}-{t1:7.1f}  track@{a/SR:6.1f}s  loud {loud:6.1f} LUFS')
-    duck = 10 ** (((BED_LUFS - OPEN_LUFS) * env) / 20)        # 0 dB in the clear -> -10.5 dB under speech
+    duck = 10 ** ((bedmap * env) / 20)                         # 0 dB in the clear -> bed depth under speech
+    for ts, dl in DROPS:                                      # hard cut-outs with 25 ms ramps
+        a0 = max(0, int(ts * SR)); b0 = min(N, int((ts + dl) * SR)); r = int(0.025 * SR)
+        if b0 - a0 > 2 * r:
+            duck[a0:a0 + r] *= np.linspace(1, 0, r); duck[a0 + r:b0 - r] = 0; duck[b0 - r:b0] *= np.linspace(0, 1, r)
     music *= duck[:, None]
     # carve a little room for the voice (2-4 kHz dip) and tame sub rumble
     for c in range(2):
@@ -78,7 +95,7 @@ fx = np.zeros((N, 2), dtype=np.float32)
 try: ev = json.load(open(f'{S}/audio/sfx.json'))
 except Exception: ev = []
 cnt = {}; recent = []; last_imp = -99.0
-FX_TRIM = -4.0          # the whole effects bus sits a little under the voice
+FX_TRIM = -3.0          # the whole effects bus sits a little under the voice
 for k, e in enumerate(sorted(ev, key=lambda e: e['t'])):
     x, lvl = SFX.make(e['name'], e.get('dur'), seed=k)
     if x is None: print('unknown sfx', e['name']); continue

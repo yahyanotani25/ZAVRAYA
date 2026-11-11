@@ -22,15 +22,14 @@ def _sweep_bp(noise, f0, f1, q=2.0, block=256):
     for i in range(n):
         lo += g[i] * bd; hi = noise[i] - lo - d * bd; bd += g[i] * hi; out[i] = bd
     return out
-_IR = None
+_IRS = {}
 def reverb(x, wet=0.25, rt=1.6, seed=5):
-    global _IR
-    if _IR is None or _IR[0] != rt:
+    if rt not in _IRS:
         r = _rng(seed); n = int(rt * SR * 1.3); t = np.arange(n) / SR
         ir = r.standard_normal((n, 2)) * np.exp(-6.9 * t / rt)[:, None]
         ir = np.stack([_hp(_lp(ir[:, c], 7000), 180) for c in range(2)], 1); ir[:int(0.004 * SR)] = 0
-        _IR = (rt, ir / np.sqrt((ir ** 2).sum(0)).max())
-    ir = _IR[1]
+        _IRS[rt] = ir / np.sqrt((ir ** 2).sum(0)).max()
+    ir = _IRS[rt]
     if x.ndim == 1: x = _st(x)
     w = np.stack([signal.fftconvolve(x[:, c], ir[:, c]) for c in range(2)], 1)
     out = np.zeros((len(w), 2)); out[:len(x)] = x * (1 - wet * 0.3); out += w * wet
@@ -160,6 +159,28 @@ def thud(seed=0):
     t = _t(0.4); x = np.sin(2 * np.pi * np.cumsum(55 + 50 * np.exp(-t * 40)) / SR) * np.exp(-t * 14)
     return _st(x * 0.9)
 
+def braam(seed=0, dur=3.6):
+    """trailer horn blast: detuned low saw stack through a closing filter, saturated, long hall tail"""
+    r = _rng(seed); t = _t(dur); root = [36.71, 41.2, 32.7][seed % 3] * 2
+    x = np.zeros(len(t))
+    for m, a in [(1, 1.0), (1.498, 0.55), (2, 0.6), (0.5, 0.9), (3, 0.25)]:
+        for det in (-0.006, 0.0, 0.007):
+            x += a * signal.sawtooth(2 * np.pi * root * m * (1 + det) * t + r.uniform(0, 6.28))
+    env = np.minimum(1, t / 0.05) * np.exp(-np.maximum(0, t - 0.9) * 1.5)
+    x = np.tanh(x * 0.55 * env * 2.2)
+    n = len(x); cut = np.geomspace(2600, 260, n); y = np.zeros(n); lo = bd = 0.0; g = 2 * np.sin(np.pi * cut / SR)
+    for i in range(n):
+        lo += g[i] * bd; hi = x[i] - lo - 0.9 * bd; bd += g[i] * hi; y[i] = lo
+    sub = np.sin(2 * np.pi * root * 0.5 * t) * env * 0.6
+    return reverb(_st((y + sub) * 0.7), wet=0.38, rt=2.4)
+def boom(seed=0):
+    """deep cinematic hit with a long tail"""
+    t = _t(3.4); r = _rng(seed)
+    f = 30 + 75 * np.exp(-t * 7); sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 1.5)
+    body = _lp(r.standard_normal(len(t)), 420) * np.exp(-t * 6) * 0.9
+    crack = _bp(r.standard_normal(len(t)), 900, 4200) * np.exp(-t * 55) * 0.5
+    return reverb(_st(np.tanh((sub * 1.2 + body + crack) * 1.7) * 0.85), wet=0.3, rt=2.4)
+
 # name -> (generator, default peak level in dBFS)
 LIB = {
  'whoosh': (lambda d, s: whoosh(d or 0.7, s), -15), 'whooshRev': (lambda d, s: whoosh(d or 0.9, s, rev=True), -15),
@@ -170,7 +191,7 @@ LIB = {
  'rewind': (lambda d, s: rewind(d or 1.6, s), -17), 'slash': (lambda d, s: slash(s), -15), 'slam': (lambda d, s: slam(s), -8),
  'heartbeat': (lambda d, s: heartbeat(s), -11), 'static': (lambda d, s: static(d or 2.0, s), -20), 'radio': (lambda d, s: radio(d or 2.0, s), -22),
  'glitch': (lambda d, s: glitch(s), -20), 'paper': (lambda d, s: paper(s), -22), 'flutter': (lambda d, s: flutter(s), -18), 'camera': (lambda d, s: camera(s), -19),
- 'thud': (lambda d, s: thud(s), -12),
+ 'thud': (lambda d, s: thud(s), -12), 'braam': (lambda d, s: braam(s), -8), 'boom': (lambda d, s: boom(s), -6),
 }
 def make(name, dur=None, seed=0):
     if name not in LIB: return None, 0

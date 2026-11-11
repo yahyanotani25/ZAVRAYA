@@ -1,6 +1,6 @@
 """Independent check of the finished voice-over: transcribe -> align to the spoken script -> report repeats / gaps / extras."""
 import json, os, subprocess, sys
-segs = [json.loads(l) for l in open('asr/final.jsonl') if l.strip().endswith('}')]
+segs = [json.loads(l) for l in open(os.environ.get('VF_IN', 'asr/final.jsonl')) if l.strip().endswith('}')]
 isl = [dict(i=k, s=s['start'], e=s['end'], words=s['words']) for k, s in enumerate(segs)]
 json.dump(isl, open('asr/final_each.json', 'w'), ensure_ascii=False)
 env = dict(os.environ, DP_IN='asr/final_each.json', DP_OUT='edit/dp_final.json')

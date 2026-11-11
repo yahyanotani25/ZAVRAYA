@@ -2,23 +2,40 @@
 
 Everything in the edit is either original (voice, script, motion graphics, 3D, sound effects) or used under the licences below. **CC BY items need the credit line in the YouTube description** — a ready-to-paste block is in `youtube-description-credits.txt`.
 
-## Music — Scott Buckley (CC BY 4.0)
+## Music (both composers: Creative Commons Attribution 4.0)
 
-All background music is by Scott Buckley, released under Creative Commons Attribution 4.0 — https://www.scottbuckley.com.au (his library page states the music is free to use with credit).
+**Scott Buckley** — https://www.scottbuckley.com.au — released under CC BY 4.0
 
 | Track | Page |
 |---|---|
-| Decoherence | https://www.scottbuckley.com.au/library/decoherence/ |
-| Passage of Time | https://www.scottbuckley.com.au/library/passage-of-time/ |
-| Adrift Among Infinite Stars | https://www.scottbuckley.com.au/library/adrift-among-infinite-stars/ |
+| Nightfall | https://www.scottbuckley.com.au/library/nightfall/ |
+| Anabasis I | https://www.scottbuckley.com.au/library/anabasis-i/ |
+| Chronicle | https://www.scottbuckley.com.au/library/chronicle/ |
+| The Vision | https://www.scottbuckley.com.au/library/the-vision/ |
 | Celestial | https://www.scottbuckley.com.au/library/celestial/ |
-| Computations (Alt. Mix) | https://www.scottbuckley.com.au/library/computations/ |
-| Cirrus | https://www.scottbuckley.com.au/library/cirrus/ |
-| In Search of Solitude | https://www.scottbuckley.com.au/library/in-search-of-solitude/ |
-| Intervention (No Melody) | https://www.scottbuckley.com.au/library/intervention/ |
+| Shadows and Dust | https://www.scottbuckley.com.au/library/shadows-and-dust/ |
+| The Old Ones | https://www.scottbuckley.com.au/library/the-old-ones/ |
 | Shoulders of Giants | https://www.scottbuckley.com.au/library/shoulders-of-giants/ |
 | Titan | https://www.scottbuckley.com.au/library/titan/ |
-| At the End of All Things | https://www.scottbuckley.com.au/library/at-the-end-of-all-things/ |
+| Aphelion | https://www.scottbuckley.com.au/library/aphelion/ |
+| Decoherence | https://www.scottbuckley.com.au/library/decoherence/ |
+
+**Kevin MacLeod** — https://incompetech.com — licensed under Creative Commons: By Attribution 4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+| Track |
+|---|
+| Impact Lento |
+| Impact Moderato |
+| Impact Intermezzo |
+| Interloper |
+| Anxiety |
+| Tabuk |
+| Impact Andante |
+| Lightless Dawn |
+| Echoes of Time v2 |
+| Impact Prelude |
+
+Where each cue plays is listed in `audio/mix.py` (`PLAN`).
 
 ## Footage (frames only — the clips' own audio is not used)
 

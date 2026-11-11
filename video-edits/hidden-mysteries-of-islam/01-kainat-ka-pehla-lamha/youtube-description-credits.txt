@@ -1,6 +1,9 @@
 MUSIC
-All music by Scott Buckley — released under CC-BY 4.0 — www.scottbuckley.com.au
-Tracks: 'Decoherence', 'Passage of Time', 'Adrift Among Infinite Stars', 'Celestial', 'Computations (Alt. Mix)', 'Cirrus', 'In Search of Solitude', 'Intervention (No Melody)', 'Shoulders of Giants', 'Titan', 'At the End of All Things'
+Music by Scott Buckley — released under CC-BY 4.0 — www.scottbuckley.com.au
+Tracks: 'Nightfall', 'Anabasis I', 'Chronicle', 'The Vision', 'Celestial', 'Shadows and Dust', 'The Old Ones', 'Shoulders of Giants', 'Titan', 'Aphelion', 'Decoherence'
+
+Music by Kevin MacLeod (incompetech.com) — Licensed under Creative Commons: By Attribution 4.0 License — http://creativecommons.org/licenses/by/4.0/
+Tracks: "Impact Lento", "Impact Moderato", "Impact Intermezzo", "Interloper", "Anxiety", "Tabuk", "Impact Andante", "Lightless Dawn", "Echoes of Time v2", "Impact Prelude"
 
 FOOTAGE & IMAGES
 NASA, NASA's Scientific Visualization Studio, NASA/JPL-Caltech, NASA/ESA/CSA/STScI, NASA/WMAP Science Team (public domain)
