@@ -32,33 +32,33 @@ env = signal.sosfiltfilt(signal.butter(2, 6, fs=SR, output='sos'), env).clip(0, 
 # ---------------- music ----------------
 # (track, start_time, end_time, offset_in_track, fade_in, fade_out, gain_dB trim)
 def at(k, d=0.0): return T(k) + d
-# v2: thriller / trailer scoring — a different cue for every beat of the story.  (track, t0, t1, offset, fade_in, fade_out, trim_dB, bed_dB_offset)
+# v3: scored entirely with the five trailer tracks supplied by the channel owner (music/user/*.mp3).
+# Big musical moments are lined up with the picture: u1's build lands on "Kainat ruki hui NAHI hai", u4's swell on the title,
+# on the CMB reveal and on the last open door, u1's final hit on the cliff-hanger.   (track, t0, t1, offset, fade_in, fade_out, trim_dB, bed_dB_offset)
+U1, U2, U3, U4, U5 = 'u1_epic_action_intro', 'u2_action_synths_arcticfox', 'u3_shell_ghost_soundride', 'u4_dramatic_teaser', 'u5_fear_of_the_dark_soundride'
+tBang = E('17') + 0.25
 PLAN = [
- ('Impact_Lento',        0.0,               at('12') + 0.5,     6.0, 1.2, 1.0,  1.0, 2.0),     # teaser: ominous build under the Einstein story
- ('Impact_Moderato',     at('12') - 0.25,   at('16') - 0.1,     0.0, 0.25, 0.25, 0.0, 2.5),    # teaser montage: driving percussion
- ('Impact_Intermezzo',   E('17') + 0.15,    PART['b'] + 2.2,    0.0, 0.05, 2.4,  0.0, 0.0),    # title hit
- ('nightfall',           PART['b'] - 0.6,   PART['c'] + 1.5,   12.0, 2.0, 3.5,  0.0, 0.0),     # history: dark, pulsing investigation
- ('anabasis-i',          PART['c'] - 1.0,   PART['d'] + 1.0,   20.0, 2.5, 3.0,  1.0, 0.0),     # the ayah, the grammar: suspended strings
- ('chronicle',           PART['d'] - 1.0,   at('117') + 1.0,   62.0, 2.0, 3.0,  1.0, 0.0),     # rewind to the first moment: slow orchestral rise
- ('the-vision',          at('117') - 1.5,   PART['e'] + 1.5,   30.0, 2.5, 3.0,  2.0, 0.0),     # the early scholars, "awalam yara"
- ('Interloper',          PART['e'] - 1.0,   at('148') + 0.6,    8.0, 2.0, 1.2, -1.0, 0.0),     # the mystery hiss: ticking suspense
- ('celestial',           at('148') - 1.2,   PART['f'] + 1.5,  128.0, 1.2, 3.5,  0.0, 0.0),     # "woh shor kainat ka tha": the reveal
- ('shadows-and-dust',    PART['f'] - 1.0,   PART['g'] + 1.5,   40.0, 2.5, 3.0,  0.0, 0.0),     # smoke and water
- ('Anxiety',             PART['g'] - 1.0,   at('184') + 0.8,    4.0, 2.0, 2.0, -1.0, 0.0),     # the sceptic's question
- ('Tabuk',               at('184') - 1.0,   at('192') + 0.5,    3.0, 2.0, 2.5, -1.5, 0.0),     # Madinah, after Badr
- ('the-old-ones',        at('192') - 2.0,   PART['h'] + 1.0,   60.0, 2.5, 2.5,  1.0, 0.0),     # the ayaat, "dil ud jaye"
- ('Impact_Andante',      PART['h'] - 0.8,   at('231') + 1.0,    5.0, 1.5, 3.0,  0.0, 0.0),     # four doors: steady tension
- ('Lightless_Dawn',      at('231') - 1.5,   at('243') + 1.5,  150.0, 2.5, 3.0,  1.0, 0.0),     # the endless chain
- ('shoulders-of-giants', at('243') - 2.0,   PART['i'] + 1.5,  268.0, 3.5, 3.5,  0.0, 0.0),     # the only door left: climax
- ('Echoes_of_Time_v2',   PART['i'] - 1.0,   at('267') + 1.0,   60.0, 2.0, 3.0,  0.0, 0.0),     # science today
- ('titan',               at('267') - 1.5,   PART['j'] + 1.5,   62.0, 3.0, 3.5,  0.0, 0.0),     # the mountain
- ('aphelion',            PART['j'] - 1.0,   at('299') + 0.8,   70.0, 3.0, 2.0,  0.0, 0.0),     # the end, the recap, the promise
- ('Impact_Prelude',      at('299') - 0.8,   E('302') + 0.25,  118.0, 1.0, 0.12, 0.0, 1.5),     # cliff-hanger for the next video
- ('decoherence',         E('302') + 0.5,    DUR,              150.0, 1.5, 3.5,  0.0, 0.0),     # end screen
+ (U1, T('4') - 8.0,      at('12') + 0.4,          0.0, 0.6, 0.8,   0.0,  2.0),    # teaser: its first build hits on "…NAHI hai"
+ (U2, at('12') - 0.25,   at('16') - 0.1,          0.0, 0.15, 0.25, -1.0,  2.0),    # montage of what is coming
+ (U4, tBang - 2.0,       PART['b'] + 2.4,        30.0, 0.5, 2.4,   0.0,  0.0),    # rewind -> title (swell at 32 s = the bang)
+ (U5, PART['b'] - 0.6,   PART['c'] + 1.5,         0.0, 2.0, 3.0,   0.0,  0.0),    # history: suspense
+ (U3, PART['c'] - 1.0,   PART['c'] + 59.5,        0.0, 2.0, 2.5,   1.0, -1.5),    # the ayah and its last word: tension, held back
+ (U3, PART['c'] + 57.0,  PART['d'] + 1.2,        20.0, 2.5, 2.5,   1.0, -1.0),
+ (U1, PART['d'] - 1.0,   PART['e'] + 1.5,   88.0 - (at('116') - (PART['d'] - 1.0)), 2.0, 2.0, 0.0, -1.0),   # rewind; u1's 88 s lift lands on "udhed diya"
+ (U3, PART['e'] - 1.0,   at('148') + 0.5,         0.0, 2.0, 1.0,   1.0,  0.0),    # the mystery hiss
+ (U4, at('148') - 2.0,   PART['f'] + 1.5,        30.0, 1.0, 3.0,  -1.0,  0.0),    # "woh shor kainat ka tha"
+ (U5, PART['f'] - 1.0,   PART['g'] + 1.5,        46.0, 2.5, 3.0,   0.0, -1.0),    # smoke and water
+ (U1, PART['g'] - 1.0,   PART['h'] + 1.0,        10.0, 2.0, 2.5,   0.0, -1.0),    # the question, Madinah, the ayaat
+ (U5, PART['h'] - 0.8,   at('243') + 1.5,         0.0, 1.5, 3.5,   0.0,  0.0),    # four doors
+ (U4, at('243') - 2.0,   PART['i'] + 1.2,  32.0 - (at('249b') - (at('243') - 2.0)), 3.0, 3.0, -1.0, -1.5),   # the only door left; swell on Allahus-Samad
+ (U2, PART['i'] - 1.0,   PART['j'] + 1.5,         4.0, 2.0, 3.0,  -1.0,  0.0),    # science today, the fortress falls, the summit
+ (U1, PART['j'] - 1.0,   at('302') - 0.3,  108.0 - (at('299') - (PART['j'] - 1.0)), 2.5, 1.5, 0.0, -1.0),   # ending; u1's last hit = "Agli video mein…"
+ (U3, E('302') + 0.6,    DUR,                    36.0, 1.5, 3.5,   0.0,  0.0),    # end screen
 ]
 BED_LUFS, OPEN_LUFS = -27.0, -19.5          # music loudness under speech / in the clear (voice sits at -16)
 # moments where the music cuts out completely for effect (start, length)
-DROPS = [(T('4') - 0.34, 0.32), (T('8') - 0.05, E('8') - T('8') + 0.25), (T('16') - 0.2, E('16') - T('16') + 0.3), (E('17') - 0.12, 0.25)]
+DROPS = [(T('4') - 0.34, 0.32), (T('8') - 0.05, E('8') - T('8') + 0.25), (T('16') - 0.2, E('16') - T('16') + 0.3), (E('17') - 0.12, 0.25),
+         (T('158') - 0.3, 0.3), (T('302') - 0.35, E('302') - T('302') + 0.5)]
 meter = pyln.Meter(SR)
 music = np.zeros((N, 2), dtype=np.float32)
 if '--nomusic' not in sys.argv:
@@ -67,7 +67,7 @@ if '--nomusic' not in sys.argv:
         t0 = max(0.0, t0); t1 = min(DUR, t1)
         if t1 - t0 < 1: continue
         x, sr = sf.read(f'{S}/music/wav/{name}.wav', dtype='float32'); assert sr == SR
-        a = int(off * SR); n = int((t1 - t0) * SR)
+        a = int(max(0.0, off) * SR); n = int((t1 - t0) * SR)
         if a + n > len(x):                       # not enough material: start earlier in the track
             a = max(0, len(x) - n - int(4 * SR))
         seg = x[a:a + n].copy()

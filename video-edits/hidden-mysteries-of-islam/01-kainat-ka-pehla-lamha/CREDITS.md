@@ -2,40 +2,19 @@
 
 Everything in the edit is either original (voice, script, motion graphics, 3D, sound effects) or used under the licences below. **CC BY items need the credit line in the YouTube description** — a ready-to-paste block is in `youtube-description-credits.txt`.
 
-## Music (both composers: Creative Commons Attribution 4.0)
+## Music (v3 — supplied by the channel owner)
 
-**Scott Buckley** — https://www.scottbuckley.com.au — released under CC BY 4.0
+The final mix uses five trailer tracks the channel owner downloaded and supplied (not included in this repo). Their licences were **not** checked here: “no copyright” tracks normally still require the creator's credit line in the video description, so copy it from each track's own page before uploading.
 
-| Track | Page |
+| Track (as named in the supplied file) | Creator |
 |---|---|
-| Nightfall | https://www.scottbuckley.com.au/library/nightfall/ |
-| Anabasis I | https://www.scottbuckley.com.au/library/anabasis-i/ |
-| Chronicle | https://www.scottbuckley.com.au/library/chronicle/ |
-| The Vision | https://www.scottbuckley.com.au/library/the-vision/ |
-| Celestial | https://www.scottbuckley.com.au/library/celestial/ |
-| Shadows and Dust | https://www.scottbuckley.com.au/library/shadows-and-dust/ |
-| The Old Ones | https://www.scottbuckley.com.au/library/the-old-ones/ |
-| Shoulders of Giants | https://www.scottbuckley.com.au/library/shoulders-of-giants/ |
-| Titan | https://www.scottbuckley.com.au/library/titan/ |
-| Aphelion | https://www.scottbuckley.com.au/library/aphelion/ |
-| Decoherence | https://www.scottbuckley.com.au/library/decoherence/ |
+| Get Ready for the MOST EPIC Action Intro Teaser Background Music of 2025 | uploader not named in the file |
+| Epic No Copyright Trailer Music | Powerful Action Synths | High Impact | ArcticFoxMusic |
+| Cinematic Tension Trailer NoCopyright Background Music | Shell Ghost | Soundridemusic |
+| Dramatic Cinematic Teaser Trailer Music | Epic Background Music | uploader not named in the file |
+| Cinematic Suspense Trailer NoCopyright Music for Video | Fear of The Dark | Soundridemusic |
 
-**Kevin MacLeod** — https://incompetech.com — licensed under Creative Commons: By Attribution 4.0 (http://creativecommons.org/licenses/by/4.0/)
-
-| Track |
-|---|
-| Impact Lento |
-| Impact Moderato |
-| Impact Intermezzo |
-| Interloper |
-| Anxiety |
-| Tabuk |
-| Impact Andante |
-| Lightless Dawn |
-| Echoes of Time v2 |
-| Impact Prelude |
-
-Where each cue plays is listed in `audio/mix.py` (`PLAN`).
+Where each track plays, and which musical moment is lined up with which picture beat, is in `audio/mix.py` (`PLAN`). The earlier CC BY score (Scott Buckley / Kevin MacLeod) is no longer in the film.
 
 ## Footage (frames only — the clips' own audio is not used)
 

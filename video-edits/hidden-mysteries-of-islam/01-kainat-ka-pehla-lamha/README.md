@@ -43,10 +43,11 @@ recording is private). This folder holds everything needed to rebuild the edit f
   palms and text; scholars appear as name plates only.
 
 **Sound**
-- Music (v2): a thriller/trailer score of 21 cues — Kevin MacLeod's "Impact" pieces and tension cues plus Scott Buckley's
-  darker orchestral tracks (all CC BY 4.0), a different cue for every beat of the story (`PLAN` in `audio/mix.py`).
-  The bed sits 7.5 dB under the open level while the voice speaks and comes up in every pause; the music cuts out
-  completely before the biggest hits.
+- Music (v3): five trailer tracks supplied by the channel owner, cut into 16 cues. Their big moments are lined up with
+  the picture — the first build lands on "Kainat ruki hui NAHI hai", the swell of the dramatic teaser on the title, on
+  the CMB reveal and on Allahus-Samad, the last hit on the cliff-hanger (`PLAN` in `audio/mix.py`). The bed sits 7.5 dB
+  under the open level while the voice speaks and comes up in every pause; the music cuts out before the biggest hits.
+  (v2 used a CC BY score by Scott Buckley and Kevin MacLeod.)
 - 530+ sound-design hits (trailer horns, booms, whooshes, risers, ticking clock, static, door slams, chimes…)
   synthesised in `audio/sfx.py` — no samples, nothing to licence. Each hit is placed by the scene that needs it.
 - Master: −14 LUFS integrated, −1 dBTP.
