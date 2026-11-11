@@ -1,6 +1,8 @@
-# Hidden Mysteries of Islam — 8 Video Scripts
+# Hidden Mysteries of Islam — 13 Video Scripts
 
-Do seasons, aath videos. Har video ka aakhri jumla agli video ka hook hai — is liye inhein isi tarteeb mein upload kijiye.
+Teen seasons. Har video ka aakhri jumla agli video ka hook hai — is liye har season ko usi tarteeb mein upload kijiye.
+
+**Sab se naya: Season 3 — Aasman** (astronomy ka poora silsila, neeche). Is mein Big Bang wali script ka naya, behtar version (Video 9) bhi shamil hai.
 
 ## Season 1 — Kainat · Haqeeqat · Waqt · Kalaam
 
@@ -24,6 +26,22 @@ Yeh chaar pehle season se zyada kasi hui hain (har ek ~12 minute), aur har ek me
 
 **Season 2 ka dhaaga:** maada kahan se aaya (5) → woh kis tarazu par tula hai (6) → us tarazu ka sab se ajeeb raaz: har cheez ka joda (7) → aur woh ek cheez jo kisi formule mein nahi aati: aap khud (8). Video 8 ka aakhri hissa Video 1 ki ayat (41:53) par wapas aata hai — aathon videos ek daira bana leti hain.
 
+## Season 3 — Aasman: Ibtida Se Anjaam Tak
+
+Paanch videos, ek kahani: kainat kaise shuru hui → is waqt hum us mein kis raftaar se tair rahe hain → sitare kis kaam ke hain (aur kis ke nahi) → sitare mar kar kya bante hain → aur yeh sab khatam kaise hoga. Har video ~11–13 minute, har ek mein formula aur calculator wala lamha, aur har ek ke aakhir mein **"Aaj raat ka mission"** — ek cheez jo dekhne wala usi raat nangi aankh se aasman mein dekh sakta hai.
+
+| # | Script | Ek line mein | Formula jo samjhaya gaya | Aaj raat ka mission | Runtime |
+|---|---|---|---|---|---|
+| 9 | [Kainat Ka Pehla Lamha 2.0](09-kainat-ka-pehla-lamha-2.md) | **Video 1 ka upgraded version.** Raat ko aasman kaala kyun hai — aur yehi kaalapan Big Bang ka saboot kaise hai | v = H₀ × d · kainat ki umar: 978 ÷ 70 = 13.97 arab saal | Do sitaron ke beech ka kaalapan | ~12.5 min |
+| 10 | [Falak: Sab Tair Rahe Hain](10-falak-sab-tair-rahe-hain.md) | Aap is waqt 7,92,000 km/h se galaxy mein tair rahe hain; Makkah ka 2 August 2027 wala grahan second tak kaise maloom hai; aur Suraj ki "muqarrar muddat" | T² = a³ (Kepler) · 400:400 · Suraj ki umar = eindhan ÷ kharch | Chaand kal kitna khiska | ~11 min |
+| 11 | [Sitaron Ka Sach](11-sitaron-ka-sach.md) | Astronomy banaam astrology: aap ka star sign 2,000 saal se ghalat kyun hai, doctor ki kheench Mars se zyada kyun thi — aur Quran ke mutabiq sitare kis liye hain | 1° = 71.6 saal · F = G·M·m/r² · Al-Biruni: R = h·cos θ ÷ (1 − cos θ) | Qutbi sitare se apna latitude | ~11 min |
+| 12 | [Sitare Jo Chhup Jate Hain](12-sitare-jo-chhup-jate-hain.md) | Zameen ko 9 millimeter mein dabao to black hole; Lahore mein paida hone wala Chandrasekhar; aur Surah Takwir ke teen lafz | v = √(2GM/r) · r = 2GM/c² · waqt ka sust hona | Betelgeuse — ek marta hua sitara | ~11 min |
+| 13 | [Kainat Ka Aakhri Lamha](13-kainat-ka-aakhri-lamha.md) | Anjaam ke chaar naqshe, 2025 ka woh ishara ke kainat wapas lipat sakti hai — aur "Jis din Hum aasman ko lapet denge" | ρ = 3H² ÷ 8πG (fi cubic meter 6 atom) · S = k log W | Andromeda — 25 lakh saal purani roshni | ~10.5 min |
+
+**Video 9 aur Video 1:** dono Big Bang par hain. Video 9 naya aur behtar hai (naya hook, calculator wala lamha, James Webb wali afwah ka jawab, 3 minute chhoti). Agar Video 1 abhi upload nahi hui to sirf Video 9 upload kijiye.
+
+**"Astrology" ke baare mein:** Video 11 sitaron se qismat ka haal batane (ilm-e-nujoom) ki tardeed karti hai — science se bhi aur Quran-o-hadith se bhi — aur sitaron ke asal ilm (falakiyaat) ko pesh karti hai. Islami channel ke liye yehi durust simt hai.
+
 Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar video chhoti ho jati hai aur kahani nahi toot'ti.
 
 ## Har file mein kya hai
@@ -42,7 +60,7 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
   - `[VISUAL]` screen par kya dikhega · `[TEXT]` screen par likha hua · `[SFX]` awaaz/music ka cue
   - `[FORMULA]` formula screen par bada likha aaye; narration ke saath us ka har hissa roshan ho
   - `[TILAWAT]` ayat ki tilawat (qari ki recording ya khud) — Arabi matn saath likha hai
-  - `[VISUAL — COUNTER]` screen ke kone mein chalta hua counter (Video 5)
+  - `[VISUAL — COUNTER]` screen ke kone mein chalta hua counter (Video 5 aur Video 10)
   - `[✂️ OPTIONAL]` yahan se yahan tak kaat sakte hain
 - **CAPS** = us lafz par awaaz mein zor. ***(pause)*** = 1–2 second ki khamoshi.
 - **Timestamps** 160 lafz/minute ki raftaar par nikale gaye hain (tilawat aur pause shamil). Aapki raftaar ke hisaab se thoda aage peeche honge.
@@ -52,16 +70,17 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 - **Pehle 5 second mein jhatka.** Salam aur channel ka naam hook ke *baad* (har script mein jagah nishan-zad hai).
 - **Shuru mein wade** — aur sab se bada wada sab se aakhir mein poora hota hai.
 - **Har 60–90 second par naya sawal** ya "lekin rukiye" — taake dekhne wale ke dimagh mein hamesha ek khula sawal rahe.
-- **Callbacks:** kabootar (1), lafz "aadat" (2), "din ka kuch hissa" (3), Taj Mahal (4), 0.7% (5 → 6), "ek arab mein ek" (6 → 7), laal rang (7 → 8). Yeh jumle do baar aate hain; doosri baar hi asal maza deti hai.
-- **"Aap bhi kijiye" wale lamhe** *(Season 2)*: calculator par 57 aur 26 (5), fridge ke maqnatees se pin uthana (6), x² = 4 ka doosra jawab (7), tamatar ka "laal" (8). Dekhne wala jab khud kuch karta hai to video chhodta nahi.
-- **Chalte hue numbers** *(Season 2)*: Video 5 mein Suraj ke wazan ka counter poori video chalta hai; Video 7 ke hook mein bataya jata hai ke video khatam hone tak aap ka jism kitni baar antimatter bana chuka hoga. Agar aap ki final video ki lambai badle to yeh do number us ke hisaab se theek kar lein (hisaab har script ke "Formula cards" mein likha hai).
+- **Callbacks:** kabootar (1, 9), lafz "aadat" (2), "din ka kuch hissa" (3), Taj Mahal (4), 0.7% (5 → 6), "ek arab mein ek" (6 → 7), laal rang (7 → 8), "raat kaali kyun hai" (9 → 13), lafz "lapetna" (10 → 13). Yeh jumle do baar aate hain; doosri baar hi asal maza deti hai.
+- **"Aap bhi kijiye" wale lamhe** *(Season 2 aur 3)*: calculator par 57 aur 26 (5), fridge ke maqnatees se pin uthana (6), x² = 4 ka doosra jawab (7), tamatar ka "laal" (8), 978 ÷ 70 (9), Mars aur Jupiter ka saal (10), Forer wale teen jumle (11), ek pathar uchhaalna (12). Dekhne wala jab khud kuch karta hai to video chhodta nahi.
+- **"Aaj raat ka mission"** *(Season 3)*: har video ka aakhri minute dekhne wale ko chhat par bhej deta hai — aur agle din comments mein wapas laata hai. Agar video kisi aur mausam mein upload ho to mission ka sitara badal lein (Video 12 aur 13 ke pinned comment mein mutabadil likha hai; baaqi teen mission saal bhar chalte hain).
+- **Chalte hue numbers** *(Season 2 aur 3)*: Video 5 mein Suraj ke wazan ka counter poori video chalta hai; Video 7 ke hook mein bataya jata hai ke video khatam hone tak aap ka jism kitni baar antimatter bana chuka hoga; Video 10 mein "aap ka safar" ka counter (220 km fi second) pehle lafz se aakhri lafz tak chalta hai. Agar aap ki final video ki lambai badle to yeh do number us ke hisaab se theek kar lein (hisaab har script ke "Formula cards" mein likha hai).
 - **"Insaaf ki baat" wale jumle.** Jahan koi cheez tashreeh hai, script khud keh deti hai. Yeh jumle video ko kamzor nahi karte — yehi aapko un channels se alag karte hain jin ke daawe comments mein toot jate hain.
 
 ## Sehat (accuracy) ke teen usool
 
 1. **Arabi matn haath se type nahi kiya gaya.** Har ayat Tanzil ke Uthmani matn se seedhi uthayi gayi hai (machine se, taake zer-zabar ki ghalti na ho). Phir bhi upload se pehle screen par lagne wali har ayat ko mushaf se ek nazar mila lein.
 2. **Har daawe ka hawala** fact-check sheet mein hai, darje ke saath: ✅ pakka · ⚠️ tashreeh ya ek se zyada raaye · 🗣️ mashhoor riwayat.
-3. **Numbers khud check kiye gaye hain** — calculator/code se: 300 shamsi = 309.2 qamari saal; GPS ka 38 microsecond; "kullun fi falak" ka ulta-seedha ek hona; "yawm" ki 365 ginti; 4 hydrogen → helium mein 0.71% ka farq; Suraj ka 42.6 lakh ton fi second; bijli ÷ gravity = 1.24×10³⁶; abjad ke 57 aur 26; laal roshni ke 428 trillion; jism ke ~150 positron fi ghanta.
+3. **Numbers khud check kiye gaye hain** — calculator/code se: 300 shamsi = 309.2 qamari saal; GPS ka 38 microsecond; "kullun fi falak" ka ulta-seedha ek hona; "yawm" ki 365 ginti; 4 hydrogen → helium mein 0.71% ka farq; Suraj ka 42.6 lakh ton fi second; bijli ÷ gravity = 1.24×10³⁶; abjad ke 57 aur 26; laal roshni ke 428 trillion; jism ke ~150 positron fi ghanta; kainat ki umar 978 ÷ 70; Mars aur Jupiter ke saal (T² = a³); burjon ka 29.3° khiskao; doctor banaam Mars ki kheench; zameen ke liye 9 millimeter; fi cubic meter 5.5 atom.
 
 **Yeh cheezein aap ko khud dekhni hain** (sab fact-check sheets mein nishan-zad hain):
 
@@ -70,15 +89,21 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 - Video 5: abjad wala hissa (57 aur 26) ✂️ optional hai. Hisaab durust hai, lekin bohat se ulama aise a'dadi nukton ko "saboot" banane se ehtiyat ka kehte hain — script bhi yehi kehti hai. Rakhna ya nikaalna aap ka faisla hai.
 - Video 7: antimatter ki "62 trillion dollar fi gram" wali qeemat saanvi zaraye se li gayi hai (NASA ke ek scientist ka 1999 ka andaza) — asal dastavez mujhe nahi mili.
 - Video 8: Ghazali aur Chalmers ki mumasilat hamari tatbeeq hai, kisi kitab ka daawa nahi — script isay "doosra ma'ni" keh kar pesh karti hai.
+- Video 10: Makkah ke grahan ke auqaat (2 August 2027, 13:24:06 se 13:29:16) upload se pehle ek baar timeanddate.com ya NASA se mila lein; aur agar Pakistan ke apne shehar ka juzvi grahan batana ho to us ka waqt wahin se lein. Agar video 2 August 2027 ke baad upload ho to hook ko maazi ke seeghe mein badal dein.
+- Video 11: burjon ki asal tareekhon wali table (formula cards ke neeche) aur Al-Biruni ki pahadi ki oonchai ke a'daad sources mein thode mukhtalif hain — screen par lagane se pehle dekh lein.
+- Video 12: 81:15-16 aur 86:1-3 ko black hole/pulsar se jodna **tafsir nahi, lafzi mumasilat hai**. Script mein yeh baat saaf likhi hai — woh jumle editing mein mat kaatiye.
+- Video 13: DESI ke nataij aur "33 arab saal" wala model taaza aur badalti hui science hai. Script inhein "ishara" aur "model" kehti hai; upload se pehle ek nazar taaza khabron par daal lein.
 
 ## Upload ki tarteeb
 
-1 → 2 → 3 → 4 → 5 → 6 → 7 → 8. Har season ko alag playlist mein rakhiye; har video ki end screen par agli video lagaiye. Agar sirf ek video se shuruaat karni ho to **Video 7** (kela), **Video 5** (Fir'aun ka khanjar) ya **Video 4** (286 ÷ 2) ka hook sab se tez hai.
+Har season apni tarteeb mein: 1 → 2 → 3 → 4, phir 5 → 6 → 7 → 8, phir 9 → 10 → 11 → 12 → 13 (Video 9 upload karein to Video 1 chhod dein). Har season ko alag playlist mein rakhiye; har video ki end screen par agli video lagaiye.
+
+Agar channel ko ek hi silsile se shuru karna ho to **Season 3** se kijiye: astronomy sab se zyada dekha jane wala mauzoo hai, aur 2 August 2027 ke grahan se pehle Video 10 ka hook waqt ke saath aur mazboot hota jayega. Akeli video ke taur par sab se tez hooks: **Video 11** (aap ka star sign ghalat hai), **Video 12** (zameen 9 millimeter), **Video 7** (kela) aur **Video 5** (Fir'aun ka khanjar).
 
 ## Agle season ke liye mauzoo (isi mayaar ke)
 
-- **Suraj ki maut** — "har ek ek muqarrar waqt tak chal raha hai" (13:2, 36:38-40); E = mc² se Suraj ki umar ka hisaab; aur yeh ke is video ke dauran aap galaxy mein 2 lakh kilometer safar kar chuke honge.
 - **Kainat ka 95% ghayab hai** — dark matter aur dark energy; ek formule se galaxy ka wazan; aur "us ki qasam jo tum dekhte ho, aur us ki jo tum nahi dekhte" (69:38-39).
+- **Zameen ki "mehfooz chhat"** — 21:32; hawa aur maqnateesi dhaal ke baghair zameen ka temperature ek formule se: −18°C; aur "lautane wala aasman" (86:11).
 - **Samandar ki tareeki** — 24:40; roshni paani mein kaise mar'ti hai (I = I₀·e⁻ᵏᶻ); lehron ke neeche lehrein.
-- **Aasman ek time machine hai** — 56:75-76 "sitaron ke maqamaat ki qasam": roshni ka saal, aur maazi ko dekhna.
+- **Pahadon ki jadein** — 78:6-7 "pahadon ko meekhein banaya"; barf ke tode wala formula jis se Himalaya ki jad nikalti hai.
 - **Quran ne khud ko parakhne ka tareeqa bataya** — 30:2-4 (Rome ki fatah), Surah Lahab, 4:82 — Karl Popper ki "falsifiability" ke saath.
