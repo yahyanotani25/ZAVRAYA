@@ -1,8 +1,8 @@
-# Hidden Mysteries of Islam — 13 Video Scripts
+# Hidden Mysteries of Islam — 14 Video Scripts
 
 Teen seasons. Har video ka aakhri jumla agli video ka hook hai — is liye har season ko usi tarteeb mein upload kijiye.
 
-**Sab se naya: Season 3 — Aasman** (astronomy ka poora silsila, neeche). Is mein Big Bang wali script ka naya, behtar version (Video 9) bhi shamil hai.
+**Sab se nayi: Video 14 — "Kitni Der Thehre?"** — waqt wali video (Video 3) ka naya version, neeche. **Season 3 — Aasman** astronomy ka poora silsila hai; is mein Big Bang wali script ka naya version (Video 9) bhi shamil hai.
 
 ## Season 1 — Kainat · Haqeeqat · Waqt · Kalaam
 
@@ -12,6 +12,14 @@ Teen seasons. Har video ka aakhri jumla agli video ka hook hai — is liye har s
 | 2 | ["Aag Kapde Ko Nahi Jalati"](02-aag-kapde-ko-nahi-jalati.md) | Imam Ghazali ka jumla, double-slit experiment, Nobel 2022, aur "Al-Qayyum" | Quantum physics, falsafa, aqeedah | ~16.5 min |
 | 3 | [Waqt Ka Raaz](03-waqt-ka-raaz.md) | 1 din = 1000 saal, GPS, Hazrat Uzair ka gadha, "300 + 9", aur taqdeer ka sawal | Relativity, riyazi, tafsir | ~15 min |
 | 4 | [Quran Ka Chhupa Hua Naqsha](04-quran-ka-chhupa-hua-naqsha.md) | Ayat 143, Ayat-ul-Kursi ka aaina, Surah Yusuf ki ulti tarteeb, palindrome | Riyazi (symmetry), balaghat, mantiq | ~15 min |
+
+### Video 14 — Video 3 ka naya version
+
+| # | Script | Ek line mein | Hisaab jo dekhne wala khud karta hai | Runtime |
+|---|---|---|---|---|
+| 14 | [Kitni Der Thehre?](14-kitni-der-thehre.md) | Quran ka ek sawal jo teen baar poocha gaya — "Kam labithtum?" — 300 saal purana sikka, woh ghadi jis ke naam jahaz ka ticket kata, hatheli se guzarta hua zarra, aur aapki zindagi: 1 ghanta 41 minute | 365.24 × 300 ÷ 354.37 = 309.2 · 70 ÷ 1000 × 24 = 1.68 | ~13 min (kaat kar ~12) |
+
+**Video 14 aur Video 3:** dono waqt par hain. Video 3 haqaiq ki fehrist thi; Video 14 ek hi sawal par khadi hai, pehle 40 second film ke teaser ki tarah hain, dekhne wale se ek shart lagti hai jo aakhri minute mein khulti hai, aur taqdeer wali behas nikaal di gayi hai (woh apni alag video maangti hai). Agar Video 3 abhi record nahi hui to us ki jagah Video 14 record kijiye — tarteeb: 1 → 2 → **14** → 4. Video 2 ka aakhri jumla aur Video 4 ka hook dono is ke saath judte hain.
 
 ## Season 2 — Maada · Tarazu · Joda · Rooh
 
@@ -52,6 +60,7 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 4. **Fact-check sheet** — har daawe ka hawala aur uska darja, plus comments mein aane wale aitrazaat ke tayyar jawab.
 5. **Shorts ke liye 2 clip** *(Season 2)* — kahan se kahan tak kaatna hai.
 6. **Pinned comment.**
+7. *(Video 14)* **Teaser ka shot-list** (pehle 52 second, second ba second), **retention ka naqsha** (kaunsa dhaaga kahan khulta aur kahan band hota hai) aur **recording ke usool**.
 
 ## Script kaise padhein
 
@@ -71,6 +80,7 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 - **Shuru mein wade** — aur sab se bada wada sab se aakhir mein poora hota hai.
 - **Har 60–90 second par naya sawal** ya "lekin rukiye" — taake dekhne wale ke dimagh mein hamesha ek khula sawal rahe.
 - **Callbacks:** kabootar (1, 9), lafz "aadat" (2), "din ka kuch hissa" (3), Taj Mahal (4), 0.7% (5 → 6), "ek arab mein ek" (6 → 7), laal rang (7 → 8), "raat kaali kyun hai" (9 → 13), lafz "lapetna" (10 → 13). Yeh jumle do baar aate hain; doosri baar hi asal maza deti hai.
+- **Video 14 ke dhaage:** "Woh jhoot nahi bol raha" (pehle 11 second → doosra sawal), ayat 22:47 (pehla sawal → aakhri calculator), "din ka kuch hissa" (teen baar, chauthi baar calculator par), video ki lambai wali shart aur kone ki be-naam ginti (pehla frame → aakhri minute). Poori fehrist us file ke "Retention ka naqsha" mein hai.
 - **"Aap bhi kijiye" wale lamhe** *(Season 2 aur 3)*: calculator par 57 aur 26 (5), fridge ke maqnatees se pin uthana (6), x² = 4 ka doosra jawab (7), tamatar ka "laal" (8), 978 ÷ 70 (9), Mars aur Jupiter ka saal (10), Forer wale teen jumle (11), ek pathar uchhaalna (12). Dekhne wala jab khud kuch karta hai to video chhodta nahi.
 - **"Aaj raat ka mission"** *(Season 3)*: har video ka aakhri minute dekhne wale ko chhat par bhej deta hai — aur agle din comments mein wapas laata hai. Agar video kisi aur mausam mein upload ho to mission ka sitara badal lein (Video 12 aur 13 ke pinned comment mein mutabadil likha hai; baaqi teen mission saal bhar chalte hain).
 - **Chalte hue numbers** *(Season 2 aur 3)*: Video 5 mein Suraj ke wazan ka counter poori video chalta hai; Video 7 ke hook mein bataya jata hai ke video khatam hone tak aap ka jism kitni baar antimatter bana chuka hoga; Video 10 mein "aap ka safar" ka counter (220 km fi second) pehle lafz se aakhri lafz tak chalta hai. Agar aap ki final video ki lambai badle to yeh do number us ke hisaab se theek kar lein (hisaab har script ke "Formula cards" mein likha hai).
@@ -80,10 +90,11 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 
 1. **Arabi matn haath se type nahi kiya gaya.** Har ayat Tanzil ke Uthmani matn se seedhi uthayi gayi hai (machine se, taake zer-zabar ki ghalti na ho). Phir bhi upload se pehle screen par lagne wali har ayat ko mushaf se ek nazar mila lein.
 2. **Har daawe ka hawala** fact-check sheet mein hai, darje ke saath: ✅ pakka · ⚠️ tashreeh ya ek se zyada raaye · 🗣️ mashhoor riwayat.
-3. **Numbers khud check kiye gaye hain** — calculator/code se: 300 shamsi = 309.2 qamari saal; GPS ka 38 microsecond; "kullun fi falak" ka ulta-seedha ek hona; "yawm" ki 365 ginti; 4 hydrogen → helium mein 0.71% ka farq; Suraj ka 42.6 lakh ton fi second; bijli ÷ gravity = 1.24×10³⁶; abjad ke 57 aur 26; laal roshni ke 428 trillion; jism ke ~150 positron fi ghanta; kainat ki umar 978 ÷ 70; Mars aur Jupiter ke saal (T² = a³); burjon ka 29.3° khiskao; doctor banaam Mars ki kheench; zameen ke liye 9 millimeter; fi cubic meter 5.5 atom.
+3. **Numbers khud check kiye gaye hain** — calculator/code se: 300 shamsi = 309.2 qamari saal; GPS ka 38 microsecond; "kullun fi falak" ka ulta-seedha ek hona; "yawm" ki 365 ginti; 4 hydrogen → helium mein 0.71% ka farq; Suraj ka 42.6 lakh ton fi second; bijli ÷ gravity = 1.24×10³⁶; abjad ke 57 aur 26; laal roshni ke 428 trillion; jism ke ~150 positron fi ghanta; kainat ki umar 978 ÷ 70; Mars aur Jupiter ke saal (T² = a³); burjon ka 29.3° khiskao; doctor banaam Mars ki kheench; zameen ke liye 9 millimeter; fi cubic meter 5.5 atom; 70 saal = 1 ghanta 41 minute (22:47 ke paimane par) aur 2 minute (70:4 ke paimane par); muon ke 660 meter aur 50 microsecond; sar aur pairon ka 0.47 microsecond; dil ki 2.58 arab dhadkanein.
 
 **Yeh cheezein aap ko khud dekhni hain** (sab fact-check sheets mein nishan-zad hain):
 
+- Video 14: bazaar wala manzar (sikka pehchana nahi gaya) tafsir ki riwayaton se hai, Quran se nahi — script "riwayaton mein aata hai" kehti hai, yeh lafz mat kaatiye. "Aadhi zindagi 20 saal tak" ek model hai (Lemlich 1975), qanoon nahi. Hasan Basri ke qaul ka hawala screen par likhna ho to *Hilyat al-Awliya'* se mila lein. Aakhri minute ke do number (video ka asal waqt aur dil ki ginti) editing mein final lambai se nikalte hain — awaaz mein nahi bole gaye.
 - Video 4: Farrin ke naqshe ki ayaton ki ranges — screen par lagane se pehle asal paper se mila lein.
 - Video 3: Imam Razi wala "barf bechne wale" ka qaul — kitab ka naam screen par likhna ho to asal matn dekh lein.
 - Video 5: abjad wala hissa (57 aur 26) ✂️ optional hai. Hisaab durust hai, lekin bohat se ulama aise a'dadi nukton ko "saboot" banane se ehtiyat ka kehte hain — script bhi yehi kehti hai. Rakhna ya nikaalna aap ka faisla hai.
@@ -96,7 +107,7 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 
 ## Upload ki tarteeb
 
-Har season apni tarteeb mein: 1 → 2 → 3 → 4, phir 5 → 6 → 7 → 8, phir 9 → 10 → 11 → 12 → 13 (Video 9 upload karein to Video 1 chhod dein). Har season ko alag playlist mein rakhiye; har video ki end screen par agli video lagaiye.
+Har season apni tarteeb mein: 1 → 2 → 14 (Video 3 ki jagah) → 4, phir 5 → 6 → 7 → 8, phir 9 → 10 → 11 → 12 → 13 (Video 9 upload karein to Video 1 chhod dein). Har season ko alag playlist mein rakhiye; har video ki end screen par agli video lagaiye.
 
 Agar channel ko ek hi silsile se shuru karna ho to **Season 3** se kijiye: astronomy sab se zyada dekha jane wala mauzoo hai, aur 2 August 2027 ke grahan se pehle Video 10 ka hook waqt ke saath aur mazboot hota jayega. Akeli video ke taur par sab se tez hooks: **Video 11** (aap ka star sign ghalat hai), **Video 12** (zameen 9 millimeter), **Video 7** (kela) aur **Video 5** (Fir'aun ka khanjar).
 
