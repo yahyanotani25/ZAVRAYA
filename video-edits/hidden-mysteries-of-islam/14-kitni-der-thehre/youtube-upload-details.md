@@ -89,7 +89,13 @@ sirf us hisse ka music badal dunga, video dobara render nahi karni padegi.
 kitni der thehre, kam labithtum, waqt ka raaz, quran aur science, quran aur waqt, time dilation urdu, relativity urdu, ashab e kahf 309 saal, 300 aur 9, surah kahf, hazrat uzair 100 saal, surah asr, laylatul qadr, einstein time, mr clock hafele keating, muon time dilation, islam aur science, urdu documentary, zindagi 1 ghanta 41 minute, uqol
 ```
 
-## 4. Upload settings
+## 4. Thumbnail
+
+`thumbnail_1280x720.jpg` — ghaar ke dahane mein chaandi ka sikka, upar chamakta hua **كَمْ لَبِثْتُمْ**, aur mota text
+**"1 GHANTA 41 MINUTE = AAPKI ZINDAGI?"**. Title "teen sawal" bechta hai aur thumbnail "hisaab" — dono ek doosre ko
+dohrate nahi. (Arabi matn tasdeeq-shuda Uthmani text se machine ke zariye liya gaya hai, haath se type nahi hua.)
+
+## 5. Upload settings
 
 | Khana | Kya chunein |
 |---|---|
@@ -99,7 +105,7 @@ kitni der thehre, kam labithtum, waqt ka raaz, quran aur science, quran aur waqt
 | Language | Urdu |
 | Category | Education |
 | Subtitles | `subtitles_roman_urdu.srt` → "With timing", language Urdu |
-| End screen | Aakhri 14 second (11:47 ke baad wali end screen): baayin frame par Video element (Video 4 aane ke baad wohi chunein), daayin gol jagah par Subscribe |
+| End screen | Aakhri 14 second (12:04 se aakhir tak): baayin khali frame par Video element ("Best for viewer", aur Video 4 upload hone ke baad wohi chunein), daayin gol jagah par Subscribe |
 | Card | "Agli video" wale hisse (11:47) par Video 4 ka card — jab upload ho jaye |
 
 **Pinned comment:**

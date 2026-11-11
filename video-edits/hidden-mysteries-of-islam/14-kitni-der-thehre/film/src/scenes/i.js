@@ -83,8 +83,8 @@ export default function ([P0, P1]) {
     ['IMAAN', 'NEK AMAL', 'HAQ KI NASEEHAT', 'SABR KI NASEEHAT'].forEach((w, i) => { const g = s.div('panel', { left: (110 + i * 430) + 'px', top: '290px', width: '410px', height: '270px', borderColor: 'rgba(233,185,85,.55)' });
       g.innerHTML = `<div class="bebas" style="position:absolute;left:0;right:0;top:20px;text-align:center;font-size:120px;line-height:1;color:${GOLD}">${i + 1}</div><div class="bebas" style="position:absolute;left:10px;right:10px;top:156px;text-align:center;font-size:${i > 1 ? 60 : 84}px;line-height:1;padding-top:${i > 1 ? 14 : 0}px">${w}</div>`;
       show(s, g, L('350') + 0.2 + i * 0.16, null, { opacity: 0, y: 40 }, 0.35); s.sfx('pop', L('350') + 0.2 + i * 0.16, { gain: 0.8 }); });
-    lowerThird(s, "IMAM SHAFI'I", `<span class="ar2" style="font-size:38px;letter-spacing:0;text-transform:none">${AR.shafii}</span> · rahimahullah`, L('351') - 0.05, d + 1, { style: { left: '170px', bottom: 'auto', top: '640px' } });
-    txt(s, 'play sh', '“Agar log sirf <span style="color:#E9B955">isi ek surat</span> par ghaur kar lein —<br>to yehi un ke liye <span style="color:#E9B955">kaafi</span> hai.”', { left: '560px', width: '1250px', top: '640px', fontSize: '64px', fontStyle: 'italic', lineHeight: '1.25' }, L('352') - 0.05, null, { opacity: 0, y: 16 }, 0.6);
+    lowerThird(s, "IMAM SHAFI'I", `<span class="ar2" style="font-size:38px;letter-spacing:0;text-transform:none">${AR.shafii}</span> · rahimahullah`, L('351') - 0.05, d + 1, { style: { left: '724px', bottom: 'auto', top: '842px' } });
+    txt(s, 'play sh', '“Agar log sirf <span style="color:#E9B955">isi ek surat</span> par ghaur kar lein —<br>to yehi un ke liye <span style="color:#E9B955">kaafi</span> hai.”', { left: '160px', width: '1600px', top: '618px', textAlign: 'center', fontSize: '66px', fontStyle: 'italic', lineHeight: '1.25' }, L('352') - 0.05, null, { opacity: 0, y: 16 }, 0.6);
     s.sfx('hit', L('350'), { gain: 0.8 }); s.sfx('shimmer', L('352'), { gain: 0.7 });
     s.div('vig');
   }, { fin: 0.25, fout: 0.3 });

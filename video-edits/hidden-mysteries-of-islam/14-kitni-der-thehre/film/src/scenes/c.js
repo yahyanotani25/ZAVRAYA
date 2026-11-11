@@ -26,12 +26,12 @@ export default function ([P0, P1]) {
     photoCard(s, '/gfx/img/newton1689.jpg', { x: 110, y: 170, w: 600, h: 740 }, L('74') - 0.3, null, { pos: '50% 18%' });
     lowerThird(s, 'ISAAC NEWTON', 'Principia · 1687', L('74') - 0.1, d + 1, { bottom: 96 });
     txt(s, 'mont sh', 'Sadiyon tak science ka jawab:', { left: '790px', top: '150px', fontSize: '50px', fontWeight: 700, color: 'rgba(245,241,232,.85)' }, L('72') - 0.05, null, { opacity: 0, y: 16 }, 0.45);
-    stamp(s, 'HARGIZ NAHI', L('73') - 0.05, { x: 800, y: 222, size: 84, rot: -4 }); s.sfx('slam', L('73'), { gain: 0.9 });
+    stamp(s, 'HARGIZ NAHI', L('73') - 0.05, { x: 800, y: 232, size: 68, rot: -4 }); s.sfx('slam', L('73'), { gain: 0.9 });
     const cs = []; for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) cs.push(clock(s, { x: 900 + c * 250, y: 560 + r * 250, r: 96, color: '#F5F1E8', sweep: false }));
     cs.forEach((c, i) => show(s, c, L('74', 'waqt') - 0.1 + i * 0.06, null, { opacity: 0, scale: 0.6 }, 0.35));
     s.onUpdate((lt) => cs.forEach((c) => c.set(36610 + lt)));
-    txt(s, 'bebas sh', 'EK HI RAFTAAR', { left: '1250px', top: '236px', fontSize: '110px', color: CYAN }, L('74', 'ek') - 0.05, null, { opacity: 0, x: 30 }, 0.35);
-    cap(s, 'Mera ek second = aapka ek second = <span class="hc">sab barabar</span>', L('74', 'mera') - 0.05, d + 1, { size: 44, bottom: 40, style: { paddingLeft: '760px', paddingRight: '60px' } });
+    txt(s, 'bebas sh', 'EK HI RAFTAAR', { left: '1330px', top: '240px', fontSize: '104px', whiteSpace: 'nowrap', color: CYAN }, L('74', 'ek') - 0.05, null, { opacity: 0, x: 30 }, 0.35);
+    cap(s, 'Mera ek second = aapka ek second = <span class="hc">sab barabar</span>', L('74', 'mera') - 0.05, d + 1, { size: 40, bottom: 44, style: { paddingLeft: '730px', paddingRight: '30px', whiteSpace: 'nowrap' } });
     s.sfx('clock', L('74', 'waqt'), { dur: Math.max(1, d - L('74', 'waqt')), gain: 0.9 });
     s.div('vig');
   }, { fin: 0.3 });

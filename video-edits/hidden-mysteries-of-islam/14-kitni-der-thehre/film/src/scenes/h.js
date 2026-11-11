@@ -47,8 +47,8 @@ export default function ([P0, P1]) {
     const c2 = txt(s, 'mono sh', 'POORA DIN =<br><span class="bebas" style="font-size:96px;letter-spacing:.02em;color:#fff;line-height:1.05">50,000 SAAL</span>', { left: '300px', top: '470px', width: '440px', textAlign: 'center', fontSize: '26px', fontWeight: 700, letterSpacing: '.3em', color: CYAN }, t5 + 0.6, null, { opacity: 0 }, 0.4);
     txt(s, 'mono sh', '← AAPKE 70 SAAL', { left: '580px', top: '150px', fontSize: '28px', fontWeight: 700, letterSpacing: '.24em', color: GOLD }, 0.9, null, { opacity: 0, x: 20 }, 0.4);
     txt(s, 'mono sh', 'US PAIMANE PAR — POORI ZINDAGI', { left: '1000px', top: '200px', fontSize: '28px', fontWeight: 700, letterSpacing: '.24em', whiteSpace: 'nowrap', color: 'rgba(245,241,232,.8)' }, L('318', 'us') - 0.05, t5, { opacity: 0 }, 0.35);
-    const hh = slam(s, '1 GHANTA', L('318', 'ek') - 0.06, { size: 230, x: 990, w: 860, y: 250, align: 'left', from: 1.4, out: t5, amp: 12 });
-    const mm = slam(s, '41 MINUTE', L('318', 'ektalees') - 0.06, { size: 230, x: 990, w: 860, y: 450, align: 'left', color: GOLD, from: 1.4, out: t5, amp: 12 });
+    const hh = slam(s, '1 GHANTA', L('318', 'ek') - 0.06, { size: 214, x: 990, w: 860, y: 252, align: 'left', from: 1.4, out: t5, amp: 12 });
+    const mm = slam(s, '41 MINUTE', L('318', 'ektalees') - 0.06, { size: 214, x: 990, w: 860, y: 462, align: 'left', color: GOLD, from: 1.4, out: t5, amp: 12 });
     const dk = txt(s, 'ar goldgrad', Q.ans, { left: '990px', top: '650px', fontSize: '110px', lineHeight: '1.9' }, L('319') - 0.2, t5, { opacity: 0, y: 16 }, 0.5);
     txt(s, 'bebas sh', '“DIN KA KUCH HISSA”', { left: '990px', top: '850px', fontSize: '110px' }, L('319') - 0.05, t5, { opacity: 0, y: 16 }, 0.35);
     s.sfx('swell', 0.1, { dur: 1.3, gain: 0.7 }); s.sfx('hit', L('318', 'ek') + 0.14, { gain: 0.9 }); s.sfx('braam', L('318', 'ektalees') - 0.06, { gain: 0.9 }); s.sfx('shimmer', L('319') - 0.2, { gain: 0.9 });
@@ -57,12 +57,12 @@ export default function ([P0, P1]) {
       txt(s, 'cinzel gold sh', REF['70:4'], { left: '994px', top: '170px', fontSize: '28px', fontWeight: 700, letterSpacing: '.34em' }, t5 + 0.1, tN, { opacity: 0 }, 0.4);
       txt(s, 'ar glowg', Q['w:50k'], { left: '990px', top: '200px', fontSize: '110px', lineHeight: '1.9', color: '#FFF3D0' }, L('320', 'pachaas') - 0.3, tN, { opacity: 0, y: 16 }, 0.5);
       txt(s, 'bebas sh', '70 SAAL =', { left: '990px', top: '470px', fontSize: '150px' }, (has('322') ? L('322') : tM) - 0.05, tN, { opacity: 0, x: 30 }, 0.3);
-      slam(s, '2 MINUTE', tM, { size: 270, x: 990, w: 860, y: 620, align: 'left', color: RED, from: 1.5, out: tN, amp: 16 });
+      slam(s, '2 MINUTE', tM, { size: 236, x: 990, w: 860, y: 630, align: 'left', color: RED, from: 1.5, out: tN, amp: 14 });
       txt(s, 'mono sh', '70 ÷ 50,000 × 24 × 60 = 2', { left: '994px', top: '920px', fontSize: '30px', fontWeight: 700, letterSpacing: '.2em', color: CYAN }, tM + 0.5, tN, { opacity: 0 }, 0.4);
       s.sfx('whooshRev', t5 + 0.6, { gain: 0.7 }); s.sfx('boom', tM + 0.02, { gain: 1.0 });
       // the fair note
       if (has('324')) {
-        const sc = s.div('fill', { background: 'rgba(4,6,14,.82)' }); show(s, sc, tN, null, { opacity: 0 }, 0.35);
+        const sc = s.div('fill', { background: 'rgba(4,6,14,.96)' }); show(s, sc, tN, null, { opacity: 0 }, 0.35);
         const br = s.div(null, { position: 'absolute', left: '330px', top: '330px', width: '10px', height: '420px', background: GOLD, transformOrigin: '50% 0%' }); gsap.set(br, { autoAlpha: 0 }); s.tl.set(br, { autoAlpha: 1 }, tN).fromTo(br, { scaleY: 0 }, { scaleY: 1, duration: 0.5 }, tN);
         txt(s, 'cinzel gold sh', 'INSAAF KI BAAT', { left: '380px', top: '330px', fontSize: '48px', fontWeight: 700, letterSpacing: '.3em' }, tN + 0.05, null, { opacity: 0, x: -20 }, 0.35);
         txt(s, 'bebas sh', 'YEH HISAAB <span style="color:#FF4B4B">TAFSIR NAHI</span>', { left: '376px', top: '420px', fontSize: '150px' }, L('324') - 0.02, null, { opacity: 0, x: -30 }, 0.3);

@@ -66,7 +66,7 @@ typed by hand):
   Teesri baar.", on Surah Al-Asr and on "Aap KHUD waqt hain", the last hit on the timer reveal. The bed sits 7.5 dB
   under the open level while the voice speaks, and the music cuts out completely (`DROPS`) before the biggest lines
   and for the whole of the bet's silence.
-- 413 sound-design hits (trailer horns, booms, whooshes, risers, ticking clocks, heartbeats, chimes, calculator keys,
+- 414 sound-design hits (trailer horns, booms, whooshes, risers, ticking clocks, heartbeats, chimes, calculator keys,
   paper…) synthesised in `audio/sfx.py` — no samples, nothing to licence.
 - Master: −14 LUFS integrated, −1 dBTP.
 

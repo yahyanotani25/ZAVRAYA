@@ -127,8 +127,21 @@ export default function ([P0, P1]) {
   defScene('f6_hadith', T('240') - 0.05, T('253') - 0.05, (s) => {
     const L = mkL(s), d = s.t1 - s.t0, tU = L('249') - 0.1;
     bg(s, 'radial-gradient(ellipse at 50% 46%, #17254a 0%, #080d1c 52%, #010205 100%)'); dust(s, { n: 70, seed: 21, color: '233,185,85' });
-    txt(s, 'cinzel gold sh', `RASULULLAH <span class="ar2" style="font-size:54px;letter-spacing:0">${AR.saw}</span> NE FARMAYA`, { left: '0', width: W + 'px', top: '96px', textAlign: 'center', fontSize: '44px', fontWeight: 700, letterSpacing: '.34em' }, L('241') - 0.05, null, { opacity: 0, y: -14 }, 0.5);
-    txt(s, 'mono sh', "JAMI' AT-TIRMIDHI · 2332", { left: '0', width: W + 'px', top: '176px', textAlign: 'center', fontSize: '26px', fontWeight: 700, letterSpacing: '.4em', color: CYAN }, L('241', 'Tirmidhi') - 0.05, null, { opacity: 0 }, 0.4);
+    // opening card: the header sits large in the centre while the narrator announces the hadith, then rises to the top
+    const tQ = L('242') - 0.05, tUp = tQ - 0.75, tK = Math.max(0.12, L('240') - 0.02);
+    const star = svg(s, `<g transform="translate(960 505)"><g id="f6star" fill="none" stroke="#E9B955" stroke-width="2.5"><rect x="-330" y="-330" width="660" height="660"/><rect x="-330" y="-330" width="660" height="660" transform="rotate(45)"/><circle r="330"/><circle r="250" stroke-width="1.5"/></g></g>`);
+    const sg = star.querySelector('#f6star'); gsap.set(star, { opacity: 0 });
+    s.tl.to(star, { opacity: 0.17, duration: 1.0, ease: 'power2.out' }, tK).to(star, { opacity: 0, duration: 0.6, ease: 'power2.in' }, tUp);
+    s.onUpdate((lt) => { if (lt < tUp + 0.7) sg.setAttribute('transform', `rotate(${(lt * 3.2).toFixed(2)}) scale(${(0.96 + 0.05 * smooth(tK, tUp, lt)).toFixed(4)})`); });
+    txt(s, 'mono sh', 'AUR AB — YEH HADITH SUNIYE', { left: '0', width: W + 'px', top: '352px', textAlign: 'center', fontSize: '30px', fontWeight: 700, letterSpacing: '.5em', paddingLeft: '.5em', color: CYAN }, tK, tUp + 0.2, { opacity: 0, y: -12 }, 0.4);
+    const rule = s.div(null, { position: 'absolute', left: '580px', top: '414px', width: '760px', height: '2px', background: 'linear-gradient(90deg,rgba(233,185,85,0),rgba(233,185,85,.9) 50%,rgba(233,185,85,0))' });
+    s.tl.fromTo(rule, { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: 'power2.out' }, tK + 0.1).to(rule, { opacity: 0, duration: 0.3 }, tUp);
+    const hd = s.div(null, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: '230px', transformOrigin: '50% 0%' });
+    const h1 = el('div', 'cinzel gold sh', { position: 'absolute', left: '0', width: W + 'px', top: '96px', textAlign: 'center', fontSize: '44px', fontWeight: 700, letterSpacing: '.34em' }, `RASULULLAH <span class="ar2" style="font-size:54px;letter-spacing:0">${AR.saw}</span> NE FARMAYA`);
+    const h2 = el('div', 'mono sh', { position: 'absolute', left: '0', width: W + 'px', top: '176px', textAlign: 'center', fontSize: '26px', fontWeight: 700, letterSpacing: '.4em', color: CYAN }, "JAMI' AT-TIRMIDHI · 2332");
+    hd.append(h1, h2); show(s, h1, L('241') - 0.05, null, { opacity: 0, y: -14 }, 0.5); show(s, h2, L('241', 'Tirmidhi') - 0.05, null, { opacity: 0 }, 0.4);
+    gsap.set(hd, { y: 300, scale: 1.5 }); s.tl.fromTo(hd, { y: 300, scale: 1.5 }, { y: 0, scale: 1, duration: 0.7, ease: 'power3.inOut', immediateRender: false }, tUp);
+    s.sfx('whoosh', tUp, { gain: 0.4 });
     const q = txt(s, 'play sh', '“Qayamat qaim nahi hogi jab tak <span style="color:#E9B955">zamana simat na jaye</span>.”', { left: '160px', width: '1600px', top: '250px', textAlign: 'center', fontSize: '56px', fontStyle: 'italic' }, L('242') - 0.05, tU, { opacity: 0, y: 14 }, 0.5);
     const rows = [['243', 'SAAL', 'MAHINE JAISA', 1 / 12], ['244', 'MAHINA', 'HAFTE JAISA', 1 / 4.3], ['245', 'HAFTA', 'DIN JAISA', 1 / 7], ['246', 'DIN', 'GHANTE JAISA', 1 / 24], ['247', 'GHANTA', 'AAG KI EK BHADAK', 0.006]];
     rows.forEach(([key, a, b, f], i) => { const y = 370 + i * 108, t = L(key) - 0.05, t2 = key === '247' ? L('248') - 0.05 : L(key, 'jaisa') - 0.35;
