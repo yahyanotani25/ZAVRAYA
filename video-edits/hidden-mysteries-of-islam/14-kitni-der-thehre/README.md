@@ -108,7 +108,12 @@ python3 edit/mk_each.py && python3 edit/dp_align.py && python3 edit/select.py   
 python3 edit/assemble.py && python3 edit/ai_sr.py && python3 edit/enhance2.py && python3 edit/make_cues.py
 python3 edit/verify.py                   # after transcribing vo/final.wav: repeats / gaps report
 cd ../film14 && node check.js && node export_sfx.js && cd ../v14 && python3 audio/mix.py
-cd ../film14 && ./render_all.sh 0 737.97 film 4 30 && ./finish.sh ../v14/out/film_video.mp4 ../v14/audio/master.wav ../v14/out/final.mp4 21
+cd ../film14 && ./render_all.sh 0 737.97 film 4 30
+tools/encode_par.sh 21 ../v14/out/final_video.mp4     # film grain + x264 CRF 21, four groups of chunks in parallel
+ffmpeg -i ../v14/out/final_video.mp4 -i ../v14/audio/master.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 256k -movflags +faststart ../v14/out/final.mp4
 ```
 
 Rendering is frame-by-frame in headless Chromium (software WebGL): about 45 minutes for the whole film on 4 cores.
+The delivered file is 181 MB (video 1.8 Mbit/s, AAC 256 kbit/s). A change to the voice or the music only needs
+`audio/mix.py` and the last `ffmpeg` line again — the picture is not re-encoded. `edit/ai_sr_rev.py` is an optional second
+worker for the bandwidth-extension step (it processes the last pieces while `ai_sr.py` works from the start).
