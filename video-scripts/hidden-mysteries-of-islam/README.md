@@ -1,8 +1,16 @@
-# Hidden Mysteries of Islam — 14 Video Scripts
+# Hidden Mysteries of Islam — 15 Video Scripts
 
 Teen seasons. Har video ka aakhri jumla agli video ka hook hai — is liye har season ko usi tarteeb mein upload kijiye.
 
-**Sab se nayi: Video 14 — "Kitni Der Thehre?"** — waqt wali video (Video 3) ka naya version, neeche. **Season 3 — Aasman** astronomy ka poora silsila hai; is mein Big Bang wali script ka naya version (Video 9) bhi shamil hai.
+**Sab se nayi: Video 15 — "Kya Khuda Hai?"** — channel ki "sutoon" video: Khuda ke wujood ka poora aqli muqadma ek jagah (neeche, sab se pehle). **Video 14 — "Kitni Der Thehre?"** waqt wali video (Video 3) ka naya version hai. **Season 3 — Aasman** astronomy ka poora silsila hai; is mein Big Bang wali script ka naya version (Video 9) bhi shamil hai.
+
+## Sutoon video — Video 15: Kya Khuda Hai?
+
+| # | Script | Ek line mein | Dekhne wala khud kya karta hai | Runtime |
+|---|---|---|---|---|
+| 15 | [Kya Khuda Hai? (Muqadma)](15-kya-khuda-hai.md) | Pehla minute mulhid ki taraf se — ilhaad ke paanch sab se mazboot aitraz. Phir saat qadmon ka aqli saboot (mantiq, riyazi, science — Quran sirf saat qadmon ke baad), paanchon aitrazon ka jawab, aur woh ek jumla jo 54 saal ke mulhid falsafi Antony Flew ne 81 saal ki umar mein kaha | Apna number (1–7) shuru aur aakhir mein likhta hai · aankhein band kar ke "kuch nahi" sochta hai · calculator par 2⁴⁰⁰ = 2.58 × 10¹²⁰ | ~32 min (kaat kar ~29.5) |
+
+**Video 15 baqi sab se kis tarah alag hai:** baqi videos ek ek nishani dikhati hain; yeh poora muqadma ek jagah rakhti hai — is liye lambi hai, aur kisi season ka hissa nahi. Is mein teen cheezein dekhne wale ko aakhir tak baandhe rakhti hain: paanch aitrazon ke paanch khane (jo ek ek kar ke sabz hote hain), saat band lifafe (jo saat qadam poore hone par ek saath khulte hain — un mein woh ayaat hain jin mein yehi qadam pehle se likhe the), aur Dawkins ka 1-se-7 wala paimana (us ka apna number aakhir mein khulta hai: 6.9). Video ke andar se Video 1/9, Video 6 aur Video 8 ke cards nikalte hain; aakhri jumla Video 4 ka hook hai. **Isay channel ki trailer / "yahan se shuru kijiye" video ke taur par rakhna behtar hai.**
 
 ## Season 1 — Kainat · Haqeeqat · Waqt · Kalaam
 
@@ -94,6 +102,7 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 
 **Yeh cheezein aap ko khud dekhni hain** (sab fact-check sheets mein nishan-zad hain):
 
+- Video 15: (1) "Mulhid ka wakeel" wala pehla minute — us poore hisse mein screen par mohar rahe: "MULHID KA MUQADMA · JAWAB ISI VIDEO MEIN", taake koi usay kaat kar ghalat rang na de sake. (2) Flew Musalman nahi hua, sirf Khaliq ka qail hua — script yeh khud kehti hai, yeh jumla mat kaatiye; us ki kitab ki tasneef par behas fact-check sheet mein darj hai. (3) Oxford wali tehqeeq, Kelemen aur Christchurch ke baad wala "Insaaf ki baat" (yeh tehqeeqat Khuda ko sabit nahi kartin) laazmi rakhiye. (4) 22:73 asal mein jhoote ma'boodon ke baare mein hai; makkhi ke dimagh ke naqshe se jodna hamari tatbeeq hai. (5) Christchurch ke feesad (8.6% / 5.3%) screen par likhne hon to asal maqale se mila lein. (6) Hadith ke hawale (Muslim 132, 134, 2807; Bukhari 3276) screen par lagane se pehle apne nuskhe ke number se mila lein — mukhtalif chhapayiyon mein number badal jate hain.
 - Video 14: bazaar wala manzar (sikka pehchana nahi gaya) tafsir ki riwayaton se hai, Quran se nahi — script "riwayaton mein aata hai" kehti hai, yeh lafz mat kaatiye. "Aadhi zindagi 20 saal tak" ek model hai (Lemlich 1975), qanoon nahi. Hasan Basri ke qaul ka hawala screen par likhna ho to *Hilyat al-Awliya'* se mila lein. Aakhri minute ke do number (video ka asal waqt aur dil ki ginti) editing mein final lambai se nikalte hain — awaaz mein nahi bole gaye.
 - Video 4: Farrin ke naqshe ki ayaton ki ranges — screen par lagane se pehle asal paper se mila lein.
 - Video 3: Imam Razi wala "barf bechne wale" ka qaul — kitab ka naam screen par likhna ho to asal matn dekh lein.
@@ -107,7 +116,7 @@ Har script mein ✂️ **optional** hisse nishan-zad hain — unhein kaat kar vi
 
 ## Upload ki tarteeb
 
-Har season apni tarteeb mein: 1 → 2 → 14 (Video 3 ki jagah) → 4, phir 5 → 6 → 7 → 8, phir 9 → 10 → 11 → 12 → 13 (Video 9 upload karein to Video 1 chhod dein). Har season ko alag playlist mein rakhiye; har video ki end screen par agli video lagaiye.
+**Video 15 ("Kya Khuda Hai?")** kisi season mein nahi — isay alag se upload kijiye aur channel ke home page par sab se upar rakhiye; is ki end screen par Video 4 lagaiye. Har season apni tarteeb mein: 1 → 2 → 14 (Video 3 ki jagah) → 4, phir 5 → 6 → 7 → 8, phir 9 → 10 → 11 → 12 → 13 (Video 9 upload karein to Video 1 chhod dein). Har season ko alag playlist mein rakhiye; har video ki end screen par agli video lagaiye.
 
 Agar channel ko ek hi silsile se shuru karna ho to **Season 3** se kijiye: astronomy sab se zyada dekha jane wala mauzoo hai, aur 2 August 2027 ke grahan se pehle Video 10 ka hook waqt ke saath aur mazboot hota jayega. Akeli video ke taur par sab se tez hooks: **Video 11** (aap ka star sign ghalat hai), **Video 12** (zameen 9 millimeter), **Video 7** (kela) aur **Video 5** (Fir'aun ka khanjar).
 
